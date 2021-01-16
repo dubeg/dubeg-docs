@@ -1,0 +1,10 @@
+======================================
+Continue a path with new anchor points 
+======================================
+
+Howto
+-----
+	1. Use the Pen tool.
+	2. With your mouse, hover over the last anchor of the path.
+	   	   When the cursor changes to a '/', click on the anchor.
+	3. New anchors will be added to the path.

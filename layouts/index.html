@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+<meta name="description" content="{{ if .IsPage }}{{ .Description }}{{end}}" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="{{ .Site.BaseURL }}images/logo-bug.png">
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-reset.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-main.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-header.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-nav.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-trail.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-footer.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/page-nav.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/page-toc.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/index.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/index-pagination.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/page-post.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/table.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/page-post-headings-shake.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-social.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-media.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/syntax-highlighting.css?{{ now.Unix }}" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Noto+Sans+JP:wght@400&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- ================== -->
+<!-- Header -->
+<!-- ================== -->
+<header id="site-header" class="site-header ">
+	<div class="site-header-logo">
+	    <img src="/images/logo-bug.png" style="width:30px;" />
+	</div>
+	<a  class="site-header-title"
+	    href="{{ .Site.BaseURL }}">
+	    DUBE.G's <span style="font-variant: all-small-caps;">Docs</span>
+	</a>
+</header>
+<div class="side-header-underbar"></div>
+<!-- ================== -->
+<!-- Trail -->
+<!-- ================== -->
+<div id="site-trail" class="site-trail">
+    <div class="container site-trail-layout">
+        <div id="site-trail-placeholder" class="site-trail-placeholder">
+            &nbsp;
+        </div>
+    </div>
+</div> 
+<!-- ================== -->
+<!-- Sidebar -->
+<!-- ================== -->
+<aside class="page-nav">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.sidebar }}
+    <div class="nav-section">
+    	<div class="nav-section-header" menuId="{{ .Name }}">
+    		<span class="chevron">{{ readFile "static/images/external/open-iconic/svg/chevron-right.svg" | safeHTML }}</span>
+	        <h1>
+	        	{{ .Name }}
+	        </h1>
+    	</div>
+        <div class="nav-section-links">
+		{{ if .HasChildren }}
+		        {{ range .Children }}
+	        		{{ if .HasChildren }}    
+			        	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			        	<!-- SubMenuItem -->
+			        	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+			        	<div class="nav-sub-section">
+				        	<span class="nav-section-header nav-sub-item" menuId="{{ .Parent }}.{{ .Name }}">
+				        		{{ .Name }}
+				        	</span>
+			        		<div class="nav-section-links">
+			        			<a href="{{ .URL }}" class="nav-sub-item">Index</a>
+			        			{{ range .Children }}
+			        				<a  href="{{ .URL }}" class="nav-sub-item">{{ .Name }}</a>
+			        			{{ end }}
+			        		</div>
+		        		</div>
+	        		{{ else}}
+		        		<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+		        		<!-- SubItem -->
+		        		<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	        			<a href="{{ .URL }}" class="nav-sub-item">{{.Name}}</a>
+	        		{{ end }}
+		        {{ end }}
+        {{ end }}
+    	</div>
+    </div>
+    {{ end }}
+</aside>
+<main>
+<!-- ================== -->
+<!-- Article -->
+<!-- ================== -->
+<article id="post" class="page-post">
+	<header class="post-header">
+		<h1 class="post-title">{{ .Title }}</h1>
+		<span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+	</header>
+	<div class="post-content">
+		{{ .Content }}
+	</div>
+</article>
+<!-- ================== -->
+<!-- Outline -->
+<!-- ================== -->
+<aside id="toc" class="page-toc">
+</aside>
+</main>
+<!-- ================== -->
+<!-- Footer -->
+<!-- ================== -->
+<footer class="site-footer site-footer-underbar">
+</footer>
+<!-- Scripts -->
+<script src="{{ .Site.BaseURL }}scripts/toc-builder.js"></script>
+<script src="{{ .Site.BaseURL }}scripts/toc-viewport.js"></script>
+<script src="{{ .Site.BaseURL }}scripts/scroller.js"></script>
+<script src="{{ .Site.BaseURL }}scripts/breadcrumbs.js"></script>
+<script src="{{ .Site.BaseURL }}scripts/dragscroll2.js"></script>
+<script src="{{ .Site.BaseURL }}scripts/table.js"></script>
+<script src="{{ .Site.BaseURL }}scripts/sticky.js"></script>
+<script src="{{ .Site.BaseURL }}scripts/menu.js"></script>
+<script src="{{ .Site.BaseURL }}scripts/main.js"></script>
+</body>
+</html>

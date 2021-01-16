@@ -1,0 +1,484 @@
+/*
+Colors: 
+
+Dark blue   #275baf
+
+
+*/
+.fa
+{
+        font: normal normal normal 16px 'FontAwesome';
+        font-size: inherit;
+}
+
+/*
+   -----------------------------------------------
+   Defaults
+   -----------------------------------------------
+*/
+
+/* Box-sizing */
+html 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+/* End */
+
+html,body
+{
+    margin:0;
+    padding:0;
+    font-family:'Segoe UI';
+}
+
+h1,h2,h3,h4,h5,h6
+{
+    margin:1em;
+    padding:0;
+}
+
+a
+{
+    text-decoration: none;
+    color:inherit;
+}
+
+body
+{
+    background-color:rgb(242, 242, 242);
+    background-color: #275baf;
+    color:rgb(45, 45, 45);
+}
+
+
+/*
+   -----------------------------------------------
+   Main Divisions
+   -----------------------------------------------
+*/
+
+.metabar
+{
+    background-color:rgb(240,240,240);
+    width:80%;
+    float:right;
+    position: relative;
+}
+.menubar
+{
+    width:20%;
+    float:left;
+    clear:left;
+}
+.content
+{
+    background-color: rgb(255, 255, 255);
+    width:80%;
+    float:right;
+}
+.footer
+{
+    width:80%;
+    float:left;
+    margin-left:20%;
+}
+
+
+/*
+   -----------------------------------------------
+   Top Bar
+   -----------------------------------------------
+*/
+.metabar
+{
+    display:flex;
+    flex-flow: row nowrap;
+    align-items:center;
+}
+.metabar .search
+{
+    margin-left:1%;
+    flex-basis: 40%;  
+    flex-shrink: 1;  
+}
+.metabar .date
+{
+    margin-left:auto;
+}
+.status-box
+{
+    align-self: stretch;
+}
+/* 
+    Search
+   -------------------------- */
+.search-bar
+{
+    margin-left:8%;
+    background-color: transparent;
+    border-radius: 5px;
+    border:none;
+    padding:0;
+}
+.search-input,
+.search-btn
+{
+    padding:0.5rem;
+    border:1px solid white;
+    outline:none;
+
+    background-color:white;
+
+
+    display:block;
+    float:left;
+
+    line-height: 18px;
+    font-size:   16px;    
+    font-weight: bold;
+    color:rgb(120,120,1500);
+}
+.search-input:focus,
+.search-btn:focus
+{
+    border-color:rgb(30,30,120);
+}
+.search-input
+{
+    width:80%;
+    border-radius: 5px 0px 0px 5px; /* topL, topR, botR, botL */
+}
+.search-btn
+{
+    color:rgb(30,150,150);
+    border-radius: 0px 5px 5px 0px; /* topL, topR, botR, botL */
+}
+
+/* 
+    Date
+   -------------------------- */
+.metabar .date
+{
+    padding:1.2em 0em;
+    padding-right:2%;
+    text-align: right;
+    color:#275baf;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+/* 
+    Status-Box
+   -------------------------- */
+.statusBox
+{
+    padding:1em 1em;
+    text-align: center;
+}
+.statusBox h6
+{
+    color:rgb(30,150,150);
+    margin:0.3em;
+}
+.statusBox .value
+{
+    font-weight: bold;
+}
+
+
+.statusBox-weather
+{
+    border-left:2px solid rgb(255,255,255);
+} 
+.weather .icon
+{
+    vertical-align: middle;
+}
+
+
+/*
+   -----------------------------------------------
+   menubar
+   -----------------------------------------------
+*/
+
+
+/*
+   Header
+   --------------------------
+*/
+.branding
+{
+    display:box;
+    text-align: center;
+    padding:0.5em;
+    font-size:2rem;
+    color:white;
+}
+.nodisplay
+{
+    display:none;
+}
+
+header .icon
+{
+    display:none;
+    background: none;
+    border:none;
+    cursor:pointer;
+}
+
+
+
+/*
+   Main Navigation
+   --------------------------
+*/
+.nav-container
+{
+    clear:both;
+}
+.nav-item
+{
+    border-bottom:1px dotted rgb(30,30,30);
+    background-color: #f9af2f; /* #14367e; Dark:ec8203 light:fdba3b    */
+    background-image: linear-gradient(to right, #ec8203 20%, #fdba3b);
+
+    font-size:1em;
+    line-height: 3.4em;
+    font-weight: 500;
+    position: relative;
+}
+.nav-item-icon
+{
+    vertical-align: middle;
+    background-color: rgba(0,0,0, 0.08);
+    font-size:2em;
+    
+    width:20%;
+
+    display:block;
+    float:left;
+    line-height: inherit;
+}
+.nav-item-label
+{
+    -background-color: rgb(150,150,150);
+    
+    width:60%;
+    display:block;
+    float:left;
+    padding-left:10px;
+}
+.nav-item-btn-open
+{
+    -background-color: white;
+    cursor:pointer;
+
+
+    display:block;
+    float:left;
+    width:20%;
+    line-height: inherit;
+}
+.nav-item-btn-open:hover
+{
+    color:white;
+}
+
+
+.nav-container a:first-child .nav-item
+{
+    border-top:1px solid rgb(45,40,50);   
+}
+.nav-container a:last-child .nav-item
+{
+    border-bottom:1px solid rgb(45,40,50);   
+}
+.nav-item a:hover
+{
+    -color:#14367e;
+    color:white;
+}
+
+
+
+/*
+   -----------------------------------------------
+   Content
+   -----------------------------------------------
+*/
+.content
+{
+    padding:3% 2%;
+}
+
+/*
+   Promo - Main
+   --------------------------
+*/
+.content .promo
+{
+    margin-bottom:2%;
+    background-color: rgba(50,50,70, 0.8);
+    background-image: 
+        radial-gradient(rgba(0,0,0,0.2), rgba(50,50,70,0.8) 90%);
+    background-size:cover;
+    background-position: 0% 30%;
+    
+    -min-height:20em;
+    color:white;
+}
+.content .promo h3
+{
+    font-size:1.5em;
+    text-shadow: 1px 1px 5px black;
+}
+.content .promo .big
+{
+    font-size: 4rem;
+}
+.promo .info
+{
+    float:left;
+}
+.promo .call-to-action
+{
+    text-align: right;
+    padding-right:2em;
+}
+.call-to-action button
+{
+    border:none;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.6);
+    padding:0.5em;
+    
+    color: #fdba3b;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    line-height: 1.4em;
+
+    transition: all 0.1s ease-in;
+}
+.call-to-action button:hover
+{
+    background-color:#fdba3b;
+    color:rgb(50,50,70);
+    cursor:pointer;
+}
+.promo .notice
+{
+    background-color: rgba(0,0,0,0.3);
+    float:left;
+    width:100%;
+    margin-top:2em;
+    padding:0.5em 2em;
+}
+
+
+/*
+   Event
+   --------------------------
+*/
+.event
+{
+    background-color: rgb(66,66,66);
+    min-height:300px;
+    color:white;
+}
+.event h3
+{
+    color:#fdba3b;
+    clear:both;
+}
+
+
+/*
+   Main Event
+   --------------------------
+*/
+.event.main
+{
+    padding:2em;
+}
+.event.main h1
+{
+    float:left;
+    margin:0;
+}
+.event.main .date
+{
+    background-color:#cc424c;
+    color:white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+
+    position: relative;
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    padding: 0.5em 0;
+    border-radius: 2em;
+
+    float:right;
+}
+.event.main .call-to-action
+{
+    text-align: right;
+}
+
+
+/*
+   Secondary Event
+   --------------------------
+*/
+.event.second
+{
+    text-align: center;
+}
+.event.second .date
+{
+    padding:0.5em;
+    font-size:1em;
+    background-color: #cc424c;
+}
+.event.second h2
+{
+    -background-color: rgb(45,45,45);
+    padding:0.6em;
+    font-size:1.2em;
+    width:100%;
+    margin:0;
+}
+.event.second .details ul
+{
+    text-align: left;
+}
+.event.second .call-to-action
+{
+    padding:2em;
+}
+
+/*
+   -----------------------------------------------
+   Footer
+   -----------------------------------------------
+*/
+.footer
+{
+    clear:both;
+    padding:1em;
+
+
+    background-color:rgb(220,220,220);
+    border-top:6px dashed gray;
+}

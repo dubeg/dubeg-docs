@@ -1,0 +1,94 @@
+/*
+ ============================================= 
+    Animations
+ ============================================= 
+*/
+
+/*
+  Logo - Pulse
+ -----------------------------------------------
+*/
+.logo-pulse
+{
+	transition:transform ease-in-out 0.2s;
+}
+.logo-pulse:hover
+{
+	animation:animLogoPulse ease-in-out 0.8s infinite alternate;
+}
+
+@keyframes animLogoPulse
+{
+
+	0%
+	{
+		transform:scale(1);
+	}
+	100%
+	{
+		transform:scale(1.05);
+	}
+}
+
+
+/*
+  Anim - Menu X
+ -----------------------------------------------
+*/
+.menu-button
+{
+	position:relative;
+	line-height: 0;
+	color:transparent;
+}
+
+.menu-button-icon,
+.menu-button-icon::after,
+.menu-button-icon::before
+{
+	background-color: white;
+	transition:all ease-in-out 0.2s;
+}
+
+.menu-button-icon
+{
+	display: block;
+	position:relative;
+	margin:auto;
+	width:100%;
+	height:2px;
+}
+.menu-button:hover .menu-button-icon
+{
+	background-color: transparent;
+}
+
+.menu-button-icon::after,
+.menu-button-icon::before
+{
+	position:absolute;
+	display:block;
+	
+	height:100%;
+	width: 100%;
+
+	content:"";
+	opacity:1;
+}
+.menu-button-icon::after {top:-0.6em;}
+.menu-button-icon::before{top: 0.6em;}
+
+.menu-button:hover
+.menu-button-icon::after
+{
+	transform:
+		translateY(0.6em)
+		rotate(45deg);
+}
+.menu-button:hover
+.menu-button-icon::before
+{
+	transform:
+		translateY(-0.6em)
+		rotate(-45deg);
+}

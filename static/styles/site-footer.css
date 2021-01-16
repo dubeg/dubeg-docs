@@ -1,0 +1,28 @@
+/* ------------------------------------------
+   Site Footer:
+   Footer at the bottom of every page.
+------------------------------------------ */
+.site-footer {
+    background-color:white;
+	color:#2E61A2;
+	grid-area: footer;
+}
+
+.site-footer-underbar {
+	height:5px;
+	background-color: #4d86cc;
+	background: repeating-linear-gradient(
+	  45deg,
+	  #4d86cc,
+	  #4d86cc 10px,
+	  #4d86cc 10px,
+	  #4d86cc 20px
+	);
+	background: repeating-linear-gradient( 
+		45deg,
+		#ffbd79,
+		#ffbd79 10px,
+		#cc4a4a 10px,
+		#cc4a4a 20px 
+	);
+}

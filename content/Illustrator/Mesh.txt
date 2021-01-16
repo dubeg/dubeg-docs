@@ -1,0 +1,63 @@
+========
+Mesh (U)
+========
+
+
+Mesh (u)
+--------
+
+	Preview Mode
+	```````````
+	 	* Can add anchor ANYWHERE on mesh patch.
+	
+	Outline Mode
+	`````````````
+		* Can add anchor ONLY on mesh LINES.
+
+	Notes
+	`````
+		* Select one mesh point at a time
+		* Change a point's opacity to blend objects.
+		* Mesh points have handles.
+
+	Shortcuts
+	`````````
+		ALT + CLICK........Remove anchor/line 	( Cursor: Arrow & - )
+		CLICK..............Add anchor 			( Cursor: Arrow & + )
+		SHIFT + CLICK......Add anchor w/ existing color on mesh.
+
+
+Direct Selection (a)
+--------------------
+	
+	Preview
+	```````
+		* Use SHIFT to select more than 1 point.
+		* Click inside a mesh patch to select all points surrounding the patch.u
+	
+	Outline
+	```````
+		* Can select only one point at a time.
+
+
+Eye Dropper (i)
+```````````````
+	0. Select mesh points.
+	1. Click to color from target to selected points.
+	2. ALT + Click to set color from selected points to target.
+
+
+Shapes
+------
+	Basic shapes
+		- Ellipse
+		- Rectangle
+
+	Complex shapes:
+		- Circular mesh (HowTo)
+		- Custom (w/ Mesh tool)
+
+
+Reference image
+---------------
+	Layer -> 'Set as a template'

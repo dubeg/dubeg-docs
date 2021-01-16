@@ -1,0 +1,121 @@
+# Guide to amperes and watts
+
+Current
+- organized flow of electric charges through a conductor.
+- measured as a rate at a point in time (?)
+- measured in ampere units, _A_.
+- abbreviated _I_.
+
+Resistance
+- without resistance, current flows freely (without much friction or blockage).
+- resistance greatly reduces the current flowing in a circuit.
+- measured in Ohm units.
+- abbreviated _R_.
+
+Ground
+- common return path for electric current, or
+- reference point from which voltages are measured, or
+- direct physical connection to the Earth.
+- Functions of grounding to earth
+  + prevent user contact with dangerous voltage when electrical insulation fails.
+  + limits build-up of static electricity
+- a ground is considered as a infinite source or sink for charge,
+  which can absorb an unlimited amount of current without changing its potential.
+- The term ground is so common in circuits that mobile devices, vehicles are said to have a ground connection
+  without any actual connection to earth, despite "common" being a more appropriate term for such
+  a connection. It is usally a large conductor attached to one side of the power supply,
+  which serves as the common return path for current from many different components in the circuit.
+
+Voltage
+- driving force that pushes electric charges to create current.
+- also called electric potential difference, or tension, or pressure.
+- measured between two points in a circuit.
+- measured in volt units, _V_.
+- abbreviated _E_.
+- V = I x R = voltage equals current times resistance.
+
+Power
+- work done by an electric circuit.
+- measured in watt units, _W_.
+- abbreviated _P_.
+- P = E x I = power equals voltage times current
+
+Electric potential difference
+- difference of charge between two points
+
+Electric current, in and of itself, isn’t all that useful. 
+It becomes useful only when the energy carried by an electric current 
+is converted into some other form of energy, such as heat, light, sound, or radio waves. 
+
+---------------
+
+Volt
+- one volt is the amount of electromotive force necessary to do one watt of work at one ampere of current.
+- one volt = 1 joule / 1 coulomb.
+
+Amp
+- one amp is the current equal to one coulomb per second.
+- coulomb is derived unit. 1C = 1 A x 1s.
+
+Watt
+- one watt is the amount of work done by a circuit in which one ampere of current is driven by one volt.
+
+Coulomb
+- one coulomb is the charge transported by a constant current of 1 amp in one second.
+
+-----------------------
+
+Components of a circuit
+- conductors
+- insulators
+- resistors
+- transistors
+- capacitors
+
+Other Keywords
+- dissipation: heat
+- polarity
+- integrated circuits
+- Direct current (DC)
+  + current which flows in one direction.
+  + each electron completes the cycle of a circuit
+- Alternating current (AC)
+  + oscillating electrons? or moving in relatively short distance, back and forth.
+  + current which preriodically reverses direction.
+- AC/DC power adapters
+  + AC input, ex: 120V AC outlet at home)
+  + DC output
+- Transformer (for AC)
+- Alternator (for AC)
+  + produces alternating current.
+
+## Questions
+In alternating current, are electrons going from one point to another? No.
+
+There must be a loss of electrons somewhere in an AC circuit,
+by devices consuming from the AC circuit. How does the circuit gains new electrons
+if it is well insulated?  
+
+How is AC converted into DC?
+
+How do AC adapters work?
+
+Why can we see colors but not UVs?
+
+## AC adapter
+- rectifier
+- diodes
+    + component that allow current to pass in one direction, but not the other.
+
+## Physical factors of current
+- Size of wire (diameter, or area)
+- Length of wire
+- Resistance of wire material
+- Insulation
+
+## References
+- www.dummies.com/education/science/science-electronics/electronics-basics-electrical-power/
+- https://www.howacarworks.com/basics/how-car-electrical-systems-work
+- https://learn.sparkfun.com/tutorials/alternating-current-ac-vs-direct-current-dc
+- https://www.allaboutcircuits.com/education/
+- https://www.groovypost.com/howto/choose-right-power-adapter-charger-phone-laptop/

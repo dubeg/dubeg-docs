@@ -1,0 +1,248 @@
+Illustrator CS6
+---
+
+Artboards: canvas
+Artboard size: target display resolution
+
+Guides
+---
+	Guides are magnetics.
+	Dragging objects near them will cause them to snap to them, within a certain pixel distance.
+
+
+	Make Guides from Objects
+	---
+	Make any vector object on the artboard into a guide.
+	Helpful to align objects at strangle angles.
+		Ex
+		1. Click & drag with the Line tool to draw a line on the artboard.
+		2. Select the line and choose View -> Guides -> Makes Guides (Ctrl + 5)
+
+		Your object is turned into a guide.
+		You can also convert any guide into an object.
+
+		1. Make sure that guides are unlocked.
+		2. Select the guide, then choose View Guides -> Releases Guides (Ctrl + Alt + 5)
+
+
+Smart Guides
+---
+	Ctrl + U ......................Show/hide smart guides
+	
+	Smart guides are dynamic and provide feedback when drawing.
+	Types of smart guides (can be found in the Preferences box):
+		1. Alignment Guides
+		2. Object highlighting
+		3. Transform Tools
+		4. Construction Guides
+		5. Anchor/Path Labels
+		6. Measurement Labels
+
+	Alignment Guides
+		* helps to align objects while drawing, moving, editing.
+		* helps align objects and anchor points to the center/edges of nearby objects.
+
+	Anchor/Path Labels
+		* appears as you hover an object to let you know whether you have an anchor point, path, center point, or edge.
+
+	Object Highlighting
+		* highlights object with a selection outline as you hover over them.
+		* allows you to see objects that have live effects applied.
+
+	Measurement Labels
+		* displays the size, distance, position of objects while drawing, moving, editing.
+
+	Transform Tools
+		* displays guides when used with Rotate, Scale, Shear tools.
+
+	Construction Guides
+		* helps to contrain line segments to specified angles.
+		* you can choose a preset angle group, or specify own custom angles.
+
+
+
+Alignment tools
+---
+	Align Panel
+	---
+		Align Objects
+		...
+
+		Distribute Objects
+		...
+
+
+		Show Options:
+			Distribute Spacing
+			...
+
+			Align To:
+				* To the Selection (default)
+					- selection <=> area in which all selected objects are contained. 
+				* To the artboard
+					- aligns objects to center/egdes of the artboard.
+				* To a key object
+					- allows to select an object to which all other objects in the selection will align.
+
+
+Grids
+---
+	Note: articles and books by Mark Boulton and Khoi Vinh helps us learn
+	and understand how to use grids effectively.
+
+	Creating a grid is an essential task that enables a foundation on which to build a consistent design scheme.
+
+	How do we create grids? Lots of different methods for everyone.
+	Typically, a grid is created by dragging guides from rulers and trying to place them consistently on the page.
+
+	Designing grids for the web:
+		1. “Simple Steps to Designing Grid Systems” by Mark Boulton
+		   http://d.pr/OkyC
+		2. Ordering Disorder: Grid Principles for Web Design (New Riders Press, 2010) by Khoi Vinh
+		   http://d.pr/m6yZ
+
+	Creating a grid
+	---
+		Ex:
+		Standard 950 pixel-wide grid with 24 columns and 10px gutters.
+		This grid will sit in the center of the 1024 x 768 document,
+		defining the "safe" area in a browser/tablet device.
+
+		Figure out columns and gutters width in whole numbers:
+			Clear guides if x > 0.
+			1. Draw 950 (W) x 768 (H) rectangle. Align it to the center of the artboard.
+			2. Object -> Path -> Split Into Grid
+			3. Dialog Box:
+				Columns:
+					Number: 24
+					Width: 30px
+					Gutter: 10px
+					Total: ...
+				* Select Add Guides
+				* Check Preview (optionally) 
+
+			The rectangle is now divided into 24 rectangles. 
+
+			4. Press & hold the Shift key, and click the guides to deselect them.
+			5. The extra rectangle are unnecessary at this point. Delete them.
+
+			Note: make all the settings integers when creating the grid.
+
+		Making the gridlines fit
+			Resize the gridlines so they fit on the artboard.
+			It's an optional step, but it helps when you have multiple artboards, so grids don't overlap on the others.
+
+			1. Use Direct Selection Tool.
+			2. Drag to selection all the anchor points on the grid.
+			3. Use arrow keys to nudge the anchors until they sit at the top of the artboard.
+			4. Repeat for the bottom side.
+			5. Select the two horizontal gridlines and delete them.
+
+		Applying the grid to multiple artboards
+			You started with one artboard; as you begin to design more of the application, you may need to create multiple artboards in this single document.
+
+			This 24-columns grid is versatible enough to be useful on every page of the app. The question remains: how can you get this grid on every artboard without having to copy/paste on each?
+
+			1. Click New Artboard button on the Artboard panel.
+			2. Select the grid with the Selection tool.
+			3. Edit -> Cut (copy?)
+			4. Edit -> Paste on All Artboards (Ctrl + Alt + Shift + V)
+
+
+
+Pixel Precision (todo: reorganize this section)
+---
+	Default Preview mode
+		* allows to view the artwork as it would print.
+		Objects are smooth and crisp no matter how far you zoom into your design. This mode is perfect for creating illustrations, logos, typography, i.e. elements that don't need to be pixel-precise.
+
+	However, when creating UI elements (buttons, widgets, etc.),
+	using Preview mode paints an unrealistic picture of how these objects appear on the web or mobile devices, with the exception of ultra-high resolution devices. 
+
+	Pixel Preview Mode
+	---
+		* renders the artwork on the screen at 72 pixels per inch,
+		just like a raster-based application as such Photoshop would.
+		* when zoomed in, allows to see vectors as if they were bitmaps.
+
+		Note: great diagnostic tools for visualizing how the artwork will render on low-res displays. 
+
+
+		Aligning Objects to the Pixel Grid
+		---
+
+			Grid (document-wide)
+			---
+			In Preferences, you can specify and view a customizable document-wide grid.
+
+			However, this extremely loose yet very restristive grid structure is only useful for technical drawings (author's opinion). It's inefficient, because it can be visually intrusive and has to be toggled on/off manually.
+
+
+			Pixel Grid
+			---
+			Since the UI design is viewed on a pixel-based screens, it makes sense that it should be designed to match a pixel-based grid. Ai includes the pixel grid for this purpose.
+
+			Pixel Grid:
+				* is separate from the document-wide grid.
+				* made up of one-pixel increments.
+				* allows to be very precise.
+				* is viewable in Pixel Preview Mode (Ctrl + Alt + Y).
+				* checkbox in Preferences: Preferences -> Grid -> Show Pixel Grid (zoom > 600%)
+
+
+				Automatically snaps objects to the Pixel Grid
+				---
+				* snaps dimensions to whole-pixel values.
+
+				Note: fuzzy edges appear when an object is sized at sub-pixel increments (ex: 400.431px) or sits on a sub-pixel X or Y point. Since Ai is vector-based, you have the ability to size and place artwork anywhere on the screen with up to 3-decimals precision, which can be helpful when creating print documents.
+
+				Since displays use pixels to render artwork, placing an object off of the pixel grid will cause it to blur. The screen can't color half of a pixel, so it anti-aliases it in order to keep the pixel from looking jagged (def. having rough, sharp points protruding (def. sticking out)). 
+
+				Enable/disable pixel-precise alignment:
+					Set globally..
+						1. Advanced section of the New Document dialog box, when creating a new document.
+							1.1 Check/uncheck "Align New Objects to Pixel Grid".
+
+						2. Transform Panel -> Top corner Button -> Check/uncheck "Align New Objects to Pixel Grid".
+
+					Set for a specific object..
+						3. Transform Panel -> Check/uncheck "Align to Pixel Grid".
+
+
+		Coordinates and Reference Points
+		---
+			The Transform panel contains ..
+				X - position on X axis
+				Y - position on Y axis
+				W - width
+				H - height
+			
+				Reference point locator
+					* used for setting the point on an object that will act as the anchor for transformations (ex: Rotation, scaling).
+
+
+				Allows you to specify a particular unit of measure without changing the ruler units.
+				Ex: 
+					* working in pixels.
+					* want to make an object two inches wide.
+						1. Type "2 in" in the Width field.
+						Ai resize the object and automatically converts the units to pixels.
+
+					* want to make an object 150% larger.
+						1. Type "* 150%" or "* 1.5" in any dimension|position field
+						Note: hold CTRL when pressing Enter to maintain proportions.
+
+
+
+
+Lining Up Stroke
+---
+	By default, Ai places the stroke across the line segment.
+	However, that doesn't represent how an object will be rendered in a browser. 
+
+	In HTML/CSS, the browser box model renders all borders on the outside of the object. To mimic this behavior in Ai, do the following:
+
+		1. Select an object.
+		2. Go to the Stroke panel.
+		3. Top corner Button -> Show Options (if needed)
+		4. Choose Align Stroke: Outside

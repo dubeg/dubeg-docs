@@ -1,0 +1,16 @@
+@media screen and (max-width: 800px)
+{
+	.project
+	{
+		width:48%;
+
+	}
+}
+@media screen and (max-width: 500px)
+{
+	.project
+	{
+		width:100%;
+
+	}
+}

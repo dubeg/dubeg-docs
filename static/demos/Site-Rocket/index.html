@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Site - Rocket</title>
+        <!-- Styles: site principal -->
+        <link href="styles/style.css" rel="stylesheet" type="text/css">
+        <!-- Styles: FontAwesome (icons) -->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.4.0/css/font-awesome.min.css">
+        <style>
+        /* Prechargement des images 
+        :root{
+        content:url(images/.jpg)
+        content:url(images/.jpg)
+        content:url(images/.jpg)
+        }
+        */
+        </style>
+    </head>
+    <body>
+        <!-- Header | Acceuil -->
+        <!-- =============================== -->
+        <header id="accueil" class="accueil">
+            <div class="conteneur">
+                <nav class="nav">
+                    <a class="nav-link" href="#container"><span>Accueil</span></a>
+                    <a class="nav-link" href="#a-propos">À propos</a>
+                    <i class="fa fa-3x fa-fw fa-bomb logo-icon" alt="Bomb logo"></i>
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                    <a class="nav-link" href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+        <!-- Slideshow/Banniere -->
+        <!-- =============================== -->
+        <article class="slider-single-viewport">
+            <div class="slider-single-container">
+                <div class="slider-single-item design">
+                    <div class="contenu">
+                        <h1>Création</h1>
+                        <p>Un domaine de travail qui inspire.</p>
+                        <div>
+                            <button class="dark">Voir détails</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-single-item prototype">
+                    <div class="contenu">
+                        <h1>Structure</h1>
+                        <p>Une équipe organisée pour produire efficacement.</p>
+                        <div><button class="dark">Voir détails</button></div>
+                    </div>
+                </div>
+                <div class="slider-single-item coding">
+                    <div class="contenu">
+                        <h1>Professionnalisme</h1>
+                        <p>Une attitude qui génère un travail de qualité.</p>
+                        <div><button class="dark">Voir détails</button></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-controls conteneur">
+                <button class="slider-btn precedant">
+                <span class="fa fa-chevron-left"></span>
+                </button>
+                <button class="slider-btn suivant">
+                <span class="fa fa-chevron-right"></span>
+                </button>
+            </div>
+        </article>
+        <!-- About | A propos -->
+        <!-- =============================== -->
+        <article id="a-propos" class="a-propos">
+            <div class="conteneur">
+                <h1>À propos</h1>
+                <p>
+                    Notre équipe de <em>feu</em> consiste en un duo de jeunes entrepreneurs spécialisés en design web.
+                </p>
+                <hr>
+                <div class="box-equipe">
+                    <div class="box-info">
+                        <h3>Guillaume Dubé</h3>
+                        <h4 class="subtitle">Designer web</h4>
+                        <p>
+                            Il souhaite batir des solutions web utiles, solides, esthétiques, mais surtout que l'on aime utiliser.
+                        </p>
+                        <button>En savoir plus</button>
+                    </div>
+                    <section class="box-info">
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill fill80"></div>
+                            
+                            <div class="skill-bar-label percent">80</div>
+                            <span class="skill-bar-label name">Code</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill fill70"></div>
+                            <div class="skill-bar-label percent">70</div>
+                            <span class="skill-bar-label name">Design</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill fill50"></div>
+                            <div class="skill-bar-label percent">50</div>
+                            <span class="skill-bar-label name">SEO</span>
+                        </div>
+                    </section>
+                    <div class="box-info">
+                        <h3>Laetitia Valet</h3>
+                        <h4 class="subtitle">Designer web</h4>
+                        <p>
+                            She's the Big. Bad. Boss.
+                            <br>
+                            Elle travaille en tandem avec Dube pour s'assurer qu'il reste concentré de 5 à 7h.
+                        </p>
+                        <button>En savoir plus</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </article>
+        <!-- Portfolio -->
+        <!-- =============================== -->
+        <article id="portfolio" class="portfolio alt-section">
+            <div class="conteneur">
+                <h1>Portfolio</h1>
+                <h4 class="subtitle">Nos plus beaux projets</h4>
+            </div>
+            <hr>
+            <!-- Slider - projects -->
+            <div class="slidePortfolioContainer">
+                <div class="containerSlide">
+                    <div class="slideItem">
+                        <h4>Site web - Racket Club</h4><br>
+                        <div class="contenu-projet">
+                            <img
+                            src=""
+                            alt="Page d'acceuil du site pour l'entreprise Racket Club"
+                            class="imgPortfolio">
+                            <div class="descriptif-projet">
+                                Voici un descriptif du projet Racket Club.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slideItem">
+                        <h4>Site web - Brackets</h4><br>
+                        <div class="contenu-projet">
+                            <img
+                            src=""
+                            alt="Page d'acceuil du site pour l'editeur de texte Brackets"
+                            class="imgPortfolio"/>
+                            <div class="descriptif-projet">Voici un descriptif du projet Brackets.</div>
+                        </div>
+                    </div>
+                    <div class="slideItem">
+                        <h4>Site web - OpenTable</h4><br>
+                        <div class="contenu-projet">
+                            <img
+                            src=""
+                            alt="Page d'acceuil du site pour le restaurant OpenTable"
+                            class="imgPortfolio"/>
+                            <div class="descriptif-projet">Voici un descriptif du projet OpenTable.</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="viewMore"><button >Voir plus</button></div>
+                
+            </div>
+        </article>
+        <!-- Contact -->
+        <!-- =============================== -->
+        <article id="contact" class="contact">
+            <div class="conteneur">
+                <h1>Contactez-nous!</h1>
+                <hr>
+                
+                <div id="map_canvas" class="gmap"></div>
+                <div class="contenu">
+                    
+                    <div class="info-box">
+                        <h3>Coordonnées</h3>
+                        <p>
+                            Montreal
+                            <br>
+                            345, rue Tremblay
+                            <br>
+                            Canada, QC
+                            <br>
+                            R0L 1P0
+                        </p>
+                        
+                        <h3>Nous rejoindre</h3>
+                        <p>
+                            <span>Tel: (233) 234-23232</span>
+                            <br>
+                            <span>Fax: (233) 000-99999</span>
+                        </p>
+                        <button>Envoyer courriel</button>
+                    </div>
+                    
+                    <form class="msg-box">
+                        <h3>Envoyer un message</h3>
+                        <p>Laisser nous vos questions et/ou remarques.</p>
+                        
+                        <input
+                        type="text"
+                        id="name"
+                        placeholder="Nom" />
+                        
+                        <input
+                        type="email"
+                        id="email"
+                        placeholder="Courriel" />
+                        
+                        <textarea id="message"
+                        placeholder="Message"
+                        cols="30"
+                        rows="10"></textarea>
+                        
+                        <button class="msg-box-submit">Envoyer message</button>
+                    </form>
+                </div>
+            </div>
+        </article>
+        </main>
+        
+        <!-- Footer | Pieds de page -->
+        <!-- =============================== -->
+        <footer class="footer">
+            <div class="conteneur">
+                <span>Team Bomb&copy;</span>
+                <nav class="navFooter">
+                    <div class="item"> <a class="navFooter-link" href="#container">Accueil</a> </div>
+                    <div class="item"> <a class="navFooter-link" href="#a-propos">À propos</a> </div>
+                    <div class="item"> <a class="navFooter-link" href="#portfolio">Portfolio</a> </div>
+                    <div class="item"> <a class="navFooter-link" href="#contact">Contact</a> </div>
+                </nav>
+            </div>
+        </footer>
+        
+        <!-- Scripts Additionnels -->
+        <!-- =============================== -->
+        <!-- Script LiveReload -->
+        <script src="http://localhost:35729/livereload.js"></script>
+        <!-- Script GoogleMap -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz4pLw2J7t3zGTaEm3XpthwO-ALZdD8qc&sensor=false"></script>
+        <script src="scripts/main.js"></script>
+    </body>
+</html>

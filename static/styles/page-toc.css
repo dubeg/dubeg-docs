@@ -1,0 +1,64 @@
+/* ------------------------------------------
+   Table of Content 
+------------------------------------------ */
+.page-toc {
+	position: sticky;
+	top: 10px;
+	margin-left: 1em;
+	padding-right: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 0.9em;
+	height: 1px;
+}
+
+/* -----------------------
+   Sub-items
+----------------------- */
+.toc-h1,
+.toc-h2,
+.toc-h3,
+.toc-h4,
+.toc-h5,
+.toc-h6
+{
+	color: #2E61A2;
+	margin-bottom:0.5em;
+	margin-top:   0.5em;
+}
+.toc-h1
+{
+	margin:0;
+}
+
+.toc-list { margin-left:0em; }
+.toc-h1 { font-size:1.2em; font-weight: 500; font-family: 'Noto Sans JP', sans-serif;}
+.toc-h2 { font-size:0.95em; margin-left: 0em; }
+.toc-h3 { font-size:0.8em; margin-left: 0.5em; }
+.toc-h4 { font-size:0.9em; margin-left: 1em; }
+.toc-h5 { font-size:0.9em; margin-left: 1.5em; }
+.toc-h6 { font-size:0.9em; margin-left: 2em; }
+
+.toc-item a {
+	color:inherit;
+	transition:color 1s ease;
+}
+
+.toc-item a:active {
+	color:orange;
+	transition-duration: 0s;
+}
+
+
+/* -----------------------
+   Viewport indicator
+----------------------- */
+.toc-viewport {
+	position: absolute;
+	width: 2px;
+	top: 0;
+	height:1em;
+	left: -1em;
+	
+	background-color: #759ed2;
+	transition: all 0.2s ease;
+}

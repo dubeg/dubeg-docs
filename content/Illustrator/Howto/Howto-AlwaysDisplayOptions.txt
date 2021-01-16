@@ -1,0 +1,7 @@
+======================================
+Howto - Always show options in panels.
+======================================
+
+Howto
+-----
+	1. Do it once and save your workspace.

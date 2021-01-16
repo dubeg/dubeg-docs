@@ -1,0 +1,273 @@
+/* ------------------------------------------
+   Post:
+   Header, Content, Footer of a single post.
+------------------------------------------ */
+.page-post {
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-bottom: 50vh;
+	min-height: calc(100vh 
+		- 43.78px /* Header */
+		- 5px /* ColorBar */
+		- 43.2px  /* Trail */
+		- 5px /* ColorBar */
+	);
+}
+
+.post-title
+{
+	font-size:2.5em;
+	font-weight: 400;
+	color: rgb(70,70,70);
+}
+
+.post-date,
+.post-tag
+{
+	display:inline-block;
+	padding:0.02em 0.2em;
+	margin-bottom:0.4em;
+	margin-top: 0.5em;
+	margin-right:0.4em;
+
+	background-color: rgba(46, 97, 162, 0.05);
+	color: rgba(99, 122, 145, 0.45);
+	border-radius:0.2em;
+	border: 2px solid transparent;
+
+	font-weight:bold;
+	font-family: Consolas;
+}
+.post-date-day
+{
+	white-space:nowrap;
+}
+.post-tag
+{
+	font-weight:bold;
+	color: rgba(46, 97, 162, 0.8);
+}
+/* ------------------------------------------ */
+.post-content
+{
+	font-size:1em;
+	color:rgb(70,70,70);
+}
+/* ------------------------------------------ */
+/* Important, otherwise post content (as a flex item) wont shrink */
+.post-content img 
+{
+	max-width:100%;
+}
+
+/* ------------------------------------------ */
+.post-content h2 { font-size:1.8em; margin-top: 1.5em; font-weight: 400; color:rgb(60,60,60);}
+.post-content h3 { font-size:1.5em; margin-top: 1.5em; font-weight: 400; color:rgb(92,120,183);}
+.post-content h4 { font-size:1.2em; margin-top: 1.5em; font-weight: 400; color:rgb(92,120,183);}
+.post-content h5 { font-size:1.0em; margin-top: 1.5em; font-weight: 400; color:rgb(92,120,183);}
+.post-content h6 { font-size:1.0em; margin-top: 1.5em; font-weight: 400; color:rgb(92,120,183);}
+/* ------------------------------------------ */
+.post-content > p:first-child:first-of-type,
+.post-content h2 + p
+{
+	margin-top:1.0em;
+}
+
+.post-content > p
+{
+	/* Taken from Hanselman's blog */
+	font-size:95%;
+	color: #333;
+	line-height:1.4em;
+	margin-top:1em;
+	margin-bottom:1em;
+}
+/* ------------------------------------------ */
+.post-content > ul,
+.post-content > ol
+{
+	margin-top:1em;
+	margin-bottom:2em;
+}
+
+.post-content ul,
+.post-content ol
+{
+	font-size:94%;
+}
+
+.post-content ul {list-style: disc;}
+.post-content ul ul {list-style: circle;}
+.post-content ul ul ul {list-style: disc;}
+.post-content ul ul {list-style: circle;}
+.post-content ul ul ul ul {list-style: square;}
+.post-content ol {list-style: decimal;}
+
+.post-content ul p + p,
+.post-content ol p + p
+{
+	margin-top:0.5em;
+} 
+
+.post-content ul li ,
+.post-content ol li 
+{
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+	margin-right:0;
+	margin-left: 1.7em;
+}
+/* ------------------------------------------ */
+.post-content em
+{
+	font-style:italic;
+}
+
+.post-content strong
+{
+	font-weight: bold;
+}
+
+.post-content sup
+{
+	vertical-align: super;
+    font-size: smaller;
+}
+
+.post-content a
+{
+	color:#2E61A2;
+	font-weight: 500;
+}
+
+.post-content blockquote
+{
+	border-left:0.2em solid orange;
+	padding:0.2em;
+	padding-left:1em;
+	margin:1em 0em;
+}
+
+.post-content blockquote p + p
+{
+	margin-top:1em;
+}
+
+.post-content pre
+{
+	margin: 1em 0em;
+}
+.post-content pre
+{
+	overflow-x: hidden;
+	border-radius: 5px;
+	box-shadow: 0px 0px 0.5em rgba(0,0,0, 0.4);
+	position: relative;
+	/* 
+	So this is weird. When display = block, there's extra space between code and pre at the bottom. 
+	Why is this? Where does it come from? Setting it to flex removes the space.
+	*/
+	display: flex; 
+}
+.post-content code
+{
+	font-family: "Consolas";
+	display: inline-block;
+	font-size: 0.8em;
+    line-height: 1.4rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    padding: 0px 6px;
+}
+.post-content pre code 
+{
+	background-color: transparent;
+	overflow-x: auto;
+	width: 100%;
+	padding: 1em 1.35em;
+	margin: 0;
+}
+/*---------------------------*/
+.post-content table
+{
+	background-color:white;
+	min-width: 50%;
+	margin-top:1em;
+	margin-bottom:1em;
+	border:2px solid rgba(0,0,100, 0.1);
+}
+.post-content .contain-table table
+{
+	margin-top:0em;
+	margin-bottom:0em;
+	border:none;
+}
+.post-content table td,
+.post-content table th
+{
+	padding:0.5em 0.5em;
+	font-size:0.8em;
+	white-space: nowrap;
+	/*min-width:80px;*/
+	pointer-events: 
+}
+.post-content table td
+{
+	font-family: Consolas;
+}
+.post-content table th
+{
+	font-size:0.9em;
+	font-weight: bold;
+	color: #626771;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+}
+
+.post-content table th
+{
+	font-size:0.9em;
+	font-weight: bold;
+	color: #626771;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+}
+
+.post-content table td:nth-child(even)
+{
+	border-left:  2px solid transparent;
+	border-right: 2px solid transparent;
+	/*border-color:rgba(0,0,100,0.08);*/
+}
+/* ------------------------------- 
+  Highlight table head for mouse grabbing
+  and dragging.
+------------------------------- */
+.post-content table thead
+{
+	transition: background-color 0.2s;
+	background-color: rgba(0,0,100,0.1);
+}
+.contain-table table thead th
+{
+}
+.contain-table table thead:active
+{
+	background-color: rgba(0,0,100,0.15);
+}
+
+/* -------------------------------
+  Alternate row 
+------------------------------- */
+.post-content table tr:nth-child(even) td
+{
+	background-color: rgba(0,0,100, 0.04);
+}
+/* -------------------------------
+  Overrides for pre/code within a table
+------------------------------- */
+.post-content table code,
+.post-content table pre
+{
+	background-color:transparent;
+}

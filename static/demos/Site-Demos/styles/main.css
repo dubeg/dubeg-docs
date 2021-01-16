@@ -1,0 +1,124 @@
+@charset "utf-8";
+/*
+ ============================================= 
+    Resets
+ ============================================= 
+*/
+html 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+   
+body
+{
+	margin:0;
+}
+a
+{
+	text-decoration: none;
+	color:inherit;
+}
+/*
+ ============================================= 
+    Global
+ ============================================= 
+*/
+body
+{
+	font-family: 'Segoe UI', 'Helvetica';
+	color: #808a8b;
+	padding-bottom:90vh;
+}
+
+header
+{
+	text-align: center;
+}
+
+.conteneur
+{
+	max-width: 1024px;
+	margin-right:auto;
+	margin-left: auto;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	margin:0;
+	padding:0;
+
+	color: #34495e;
+}
+h1 {font-size: 3em}
+h2 {font-size: 2.5em}
+h3 {font-size: 2em}
+h4, .subtitle.h2 {font-size: 1.5em}
+h5, .subtitle.h3 {font-size: 1em}
+h6, .subtitle.h4 {font-size: 0.5em}
+
+.subtitle{ 
+	color:rgb(232,76,61);
+	font-weight: bold;
+}
+
+button
+{
+	background-color: transparent;
+	color:rgb(232,76,61);
+
+	border: 2px solid rgb(232,76,61);
+	border-radius:10px;
+	padding:1em;
+
+	font-weight: bolder;
+	font-size:14px;
+	cursor:pointer;
+	outline: none;
+
+	transition: all 0.1s ease-in-out;
+}
+button.dark
+{
+	background-color: white;
+	border:white;
+	color:#34495e;
+}
+button:hover, button:focus
+{
+	background-color: rgb(232,76,61);
+	color:white;
+	text-shadow: none;
+}
+
+hr
+{
+	width:3em;
+	border:none;
+	border-top:0.2em solid rgb(170,170,170);
+	margin:all;
+
+	align-self: flex-start;
+	margin-top   :1em;
+	margin-bottom:1em;
+}
+
+.demos {
+	display:flex;
+	flex-direction: column;
+	flex-wrap:wrap;
+	align-items: center;
+}
+
+.demo
+{
+	margin:2em;
+	padding:2em;
+	border:4px dashed rgba(30,30,30,0.2);
+}

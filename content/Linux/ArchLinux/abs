@@ -1,0 +1,19 @@
+Arch Build System
+=================================================
+
+Ports : system consisting of build scripts that reside in 
+ a directory tree on the local system.
+
+ Simply put, each port contains a script within a directory
+ intuitively named after the installable third-party app.
+
+
+ABS
+
+The ABS tree offers the same functionality by providing build scripts
+called PKGBUILDS, which are populated with info for a given 
+piece of software: integrity, hashes, project URL, version, license, build instructions.
+
+These PKGBUILDS are later parsed by 'makepkg', the actual program that generates packages 
+cleanly manageable by 'pacman'.
+

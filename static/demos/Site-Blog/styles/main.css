@@ -1,0 +1,321 @@
+@charset "utf-8";
+/*
+ ============================================= 
+    Resets
+ ============================================= 
+*/
+html 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+   
+body
+{
+	margin:0;
+}
+a
+{
+	text-decoration: none;
+	color:inherit;
+}
+fieldset
+{
+	margin:0;
+	padding:0;
+	border:0;
+}
+h1,h2,h3,h4,h5,h6
+{
+	margin:0;
+	padding:0;
+}
+/*
+ ============================================= 
+    Global
+ ============================================= 
+*/
+body
+{
+	font-family:'Open Sans', sans-serif;
+	background-color: white;
+	color:black;
+}
+
+.container
+{
+	max-width: 1300px;
+	margin:auto;
+	padding:0 4em;
+}
+
+
+/*
+ ---------------------------------
+  Header
+ ---------------------------------
+*/
+.header
+{
+	background-color: #2E61A2;
+	color:white;
+	padding:1rem 0;
+}
+.header .container
+{
+	display:flex;
+	align-items: center;
+}
+.header-logo
+{
+	width:4rem;
+}
+.header-title
+{
+	margin-left:1rem;
+	font-size:3rem;
+	font-weight: 100;
+}
+
+.header-nav
+{
+	border-left:2px solid white;
+	margin-left: 1.5rem;
+	padding-left:1.5rem;
+}
+.header-nav-link
+{
+	margin-right:0.5rem;
+	font-size:1rem;
+	font-weight: bold;
+}
+
+.header-external
+{
+	margin-left:auto;
+}
+.header-external-link
+{
+	margin:0 0.1rem;
+	display:inline-block;
+	width: 1.5rem;
+	height:1.5rem;
+	color:transparent;
+
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	background-color: rgb(240,240,240);
+}
+/*
+.header-external-link.fb
+{ 
+	background-image: url("../images/social/facebook.png"); 
+}
+.header-external-link.yt
+{ 
+	background-image: url("../images/social/gplus.png"); 
+}
+.header-external-link.tw
+{ 
+	background-image: url("../images/social/twitter.png"); 
+}
+.header-external-link.gh
+{ 
+	background-image: url("../images/social/linkedin.png");
+}
+*/
+
+/*
+ ---------------------------------
+  Trail
+ ---------------------------------
+*/
+.trail
+{
+	background-color: #FFDC5C; #E7E6F3;
+	color:black;
+	padding:0.5rem 0;	
+	word-spacing: 0.2rem;
+}
+.trail .container
+{
+}
+.trail-link
+{
+}
+.trail-link-current
+{
+}
+
+/*
+ ---------------------------------
+  Main
+ ---------------------------------
+*/
+.body
+{
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+
+	display:flex;
+}
+.body-container
+{
+	-width:70%;
+	max-width: 900px;
+}
+.body-outline
+{
+	font-weight: bold;
+	color:#2E61A2;
+	margin-left:4rem;
+	margin-top:6rem;/*TODO: any way to fix this?*/
+}
+.body-header
+{
+	display:flex;
+	align-items: center;
+	flex-direction: row;
+}
+.body-title
+{
+	color:rgb(60,60,60);
+	font-size:2.8rem;
+}
+.body-search
+{
+	margin-left:auto;	
+}
+.body-sep
+{
+	margin:2rem 0rem;
+	border:none;
+	background-color: rgb(220,220,234);
+	height:2px;
+}
+.posts
+{
+}
+.post
+{
+	-border:1px solid white;
+	padding-bottom:2em;
+
+	display:flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+.post-thumbnail
+{
+	background-color: rgb(100,100,110);
+	width: 200px;
+	height:200px;
+	margin-right:1em;
+	flex-shrink: 0;
+}
+.post-cover
+{
+	flex-shrink: 0;
+	width: 100%;
+	height:200px;
+	margin-top:   1rem;
+	margin-bottom:1rem;
+}
+
+.post-content p:not(.post-summary)
+{
+	max-width:750px;
+}
+.post-title
+{
+	font-size:1.6rem;
+}
+.post-content h1, .post-content h3, .post-content h5,
+.post-content h2, .post-content h4, .post-content h6
+{
+	color:#2E61A2;
+}
+.post-summary
+{
+}
+.post-tags
+{
+}
+.post-tag
+{
+	display:inline-block;
+	font-size:0.8rem;
+	padding:0.2em 0.4em;
+	background-color:#FFDC5C;
+}
+.post-date
+{
+	color:rgb(30,30,30);
+	font-weight: lighter;
+	font-size:1.2rem;
+	margin-bottom:0.4rem;
+}
+.post-link
+{}
+
+
+
+
+.posts-nav
+{
+	display:flex;
+	justify-content: flex-end;
+}
+.posts-nav-link
+{
+	display:inline-block;
+	padding:0.3rem 0.8rem;
+
+	border:3px solid  #2E61A2;
+	background-color: #2E61A2;
+	color: white;
+	font-weight: bold;
+}
+.posts-nav-link
+{
+	margin:0 0.2rem;
+}
+.posts-nav-link.current
+{
+	background-color: transparent;
+	color:#2E61A2;
+	border-color:#2E61A2;
+}
+.posts-nav-link.goto
+{
+	-background-color: transparent;
+	-color: #2E61A2;
+	-border-color:transparent;
+}
+
+
+
+/*
+ ---------------------------------
+  Footer
+ ---------------------------------
+*/
+.footer
+{
+	background-color: #2E61A2;
+	color:white;
+	-color:transparent;
+	padding:1rem;
+}
+.footer-copyright
+{
+	font-weight: lighter;
+}

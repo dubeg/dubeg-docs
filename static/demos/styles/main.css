@@ -1,0 +1,118 @@
+/*
+ ============================================= 
+    Resets
+ ============================================= 
+*/
+html 
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+   
+body
+{
+	margin:0;
+	font-family: 'Segoe UI';
+}
+a
+{
+	text-decoration: none;
+	color:inherit;
+}
+
+/*
+ ============================================= 
+    Global
+ ============================================= 
+*/
+a
+{
+	text-decoration: underline;
+	color:#0B3770;
+}
+
+
+/*
+ ============================================= 
+    Header
+ ============================================= 
+*/
+.header
+{
+	background-color: #2E61A2;
+	color:white;
+
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+
+	justify-content: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+	padding:1em;
+}
+.header h1
+{
+	margin:0em 0.5em;
+	font-size: 3em;
+	font-weight: lighter;
+	text-transform: uppercase;
+}
+.header .logo
+{
+	width:64px;
+	height:auto;
+}
+
+
+/* Main Content
+   -------------------------------------- */
+.projects
+{
+	display:flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+
+	width:80%;
+
+	margin: 2em auto;
+}
+
+.project
+{
+	background-color:rgba(205,218,226,0.1);
+	border: 4px dashed rgb(205,218,226);
+	border-radius:5px;
+
+	width:23%;
+	margin-bottom: 2em;
+	min-height:20em;
+
+	display:flex;
+	flex-flow: column nowrap;
+	align-items: center;
+
+	padding:0.5em;
+}
+.project h1
+{
+	text-align:center;
+}
+.project img
+{
+	max-width:100%;
+	min-height: 0;
+}
+

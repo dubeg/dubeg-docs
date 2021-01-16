@@ -1,0 +1,3 @@
+Illustrator CC
+Problem: artboard with 1 pixel off
+Solution: move artboard to whole digits (position)

@@ -1,0 +1,22 @@
+# Archiving
+## tar cvf   <...>.tar     dir/
+## tar cvfz <...>.tar.gz  dir/
+## tar cvfj <...>.tar.bz2 dir/
+c - create archive
+v - verbose (list files)
+f - filename of archive
+
+z - filter the archive through gzip
+j - filter the archive through bz2
+
+* .tgz = .tar.gz
+* .tb2, .tbz = .tar.bz2
+
+# Extracting
+## tar xvf  <...>.tar
+## tar xvfz <...>.tar.gz
+## tar xvfj <...>.tar.bz2
+x - extract files form archive
+
+
+

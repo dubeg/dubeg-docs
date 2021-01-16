@@ -1,0 +1,16 @@
+http://askubuntu.com/questions/7517/what-is-the-relationship-between-mime-types-and-file-extensions
+----
+>A file's type is not stored as metadata on common linux file systems.
+
+
+http://www.howtogeek.com/192628/mime-types-explained-why-linux-and-mac-os-x-dont-need-file-extensions/
+----
+>Rather than relying on the file extension at the end of a file’s name, information about the file’s content — the file’s MIME type — is embedded into the beginning of the file itself
+
+
+http://superuser.com/questions/596302/how-does-linux-know-what-is-the-mimetype-of-a-file
+-> http://standards.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-0.18.html#idm140001675172816
+----
+>Through the "magic" bytes in a file. You can do this yourself by running the file command:
+
+

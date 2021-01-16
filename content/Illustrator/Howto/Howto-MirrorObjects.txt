@@ -1,0 +1,35 @@
+==========================
+Create Simmetrical Objects
+==========================
+
+Howto
+-----
+	1. Create an object as a starting point.
+	2. Use Transform on the object.
+		2.1 Select shape.
+		2.2 Effect->"Distort & transform"->Transform
+		2.3 Turn on Preview (bottom left on the modal)
+		2.4 Set Copies to 1.
+		2.5 Choose the anchor point of the transform
+			: click on one of the 9 points on the anchor icon.
+		2.6 Select the axis you want to reflect off of.
+
+	Note: 
+		* make sure the anchors on the axis are aligned.
+			* use the align tool if needed.
+		*  leaving the transform effect avtive means you can go back and edit your shape.
+		* to flatten the shape (decompose the transform) and merge both sides, 
+			1. Select shape.
+			2. Object->"Expand Appearance"
+			3. Select shape again.
+			4. Panel, Pathfinder->Unite
+			Note: it will not work the same way if you use Effects->Pathfinder. 
+
+			OR
+
+			4.1 Move a little further away one shape.  
+			4.2 For each shape, delete section between the 2 anchors on the mirror axis.
+			4.3 Select one anchor from both shape.
+			4.4 Object->Path->Join or Join/Average(ALT+SHIFT+CTRL+J)
+			
+			Note: make sure both path/objects are on the same level under a calque.

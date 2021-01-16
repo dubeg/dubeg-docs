@@ -1,0 +1,137 @@
+Methods of combining objects
+---
+https://helpx.adobe.com/illustrator/using/combining-objects.html
+
+
+	Pathfinder effects
+		* combine multiple objects using one of 10 interaction modes
+		* combine objects in calques
+		* can't edit interactions between objects
+
+	Compound Shapes (combine as to form a whole)
+		* combine multiple objects and specify how you want each object interact with the other objects.
+		* underlying objects are not changed, so you can select each object within a compound shape to edit it, or change its interaction mode.
+		* provides following interactions: 
+			+ add
+			+ subtract
+			+ intersect
+			+ exclude.
+
+	Compound paths
+		* lets you use an object to cut a hole in another object.
+			Ex: 
+				Create a doughnut from two nested circles.
+				Once you create a compound path, the paths act as grouped objects.
+				You can select and manipulate the objects separately using the "Direct Selection tool", or "Group Selection" tool; or you can select and edit the combined path.
+
+
+Pathfinder Panel Overview
+	: Window->Pathfinder
+
+	Top row of buttons make paths or compound paths by default.
+	Click ALT to compound shapres.
+
+	Shape modes:
+		Add To Shape Area : adds the area of the component to the underlying geometry.
+		Subtract from Shape Area: cuts out the area of the component from the underlying geometry.
+		Intersect Shape Areas: uses the area of the component to clip the underlying geometry as a mask would.
+		Exclude Overlapping Shape Areas: uses the area of the component to invert the underlying geometry, turning filled regions into holes and vice versa.
+
+	The bottom row of buttons, called Pathfinder effects, let you create final shape combinations on the first click. 
+
+	Pathfinder Options:
+		Precision............Affects how precisely the effect calculate an object.s path. 
+		Remove Redundant points.......Remove unnecessary points as you click a pathfinder button.
+
+	Apply Pathfinder effects
+		* create new shapes out of overlapping objects.
+
+		* Pathfinder effects in the Effects menu can only be applied to groups, layers, text objects. After you apply the effect, you can still select and edit the original objects.
+
+		* Pathfinder effects in the Pathfinder panel can be applied to any combination of objects, groups, layers. The final shape combination is created when you click a P.F. button; after that, you canot edit the original objects.
+
+
+		Summary of Pathfinder effects
+			Add
+
+			Traces the outline of all objects as if they were a single, merged object. The resulting shape takes on the paint attributes of the top object.
+
+			Intersect
+
+			Traces the outline of the region overlapped by all the objects.
+
+			Exclude
+
+			Traces all nonoverlapping areas of the objects, and makes overlapping areas transparent. Where an even number of objects overlap, the overlap becomes transparent. Where an odd number of objects overlap, the overlap becomes filled.
+
+			Subtract
+
+			Subtracts the frontmost objects from the backmost object. You can use this command to delete areas of an illustration by adjusting the stacking order.
+
+			Minus Back
+
+			Subtracts the objects in back from the frontmost object. You can use this command to delete areas of an illustration by adjusting the stacking order.
+
+			Divide
+
+			Separates a piece of artwork into its component filled faces (a face is an area undivided by a line segment).
+
+			note: When you use the Divide button in the Pathfinder panel, you can use the Direct Selection or Group Selection tool to manipulate the resulting faces independently of each other. You can also choose to delete or preserve unfilled objects when applying the Divide command.
+
+			Trim
+
+			Removes the part of a filled object that is hidden. It removes any strokes and does not merge objects of the same color.
+
+			Merge
+
+			Removes the part of a filled object that is hidden. It removes any strokes and merges any adjoining or overlapping objects filled with the same color.
+
+			Crop
+
+			Divides artwork into its component filled faces, and then deletes all the parts of the artwork that fall outside the boundary of the topmost object. It also removes any strokes.
+
+			Outline
+
+			Divides an object into its component line segments, or edges. This command is useful for preparing artwork that needs a trap for overprinting objects. (See Create a trap.)
+
+			note: When you use the Outline button in the Pathfinder panel, you can use the Direct Selection or Group Selection tool to manipulate each edge independently. You can also choose to delete or preserve unfilled objects when applying the Outline command.
+
+			Hard Mix
+
+			Combines colors by choosing the highest value of each of the color components. For example, if Color 1 is 20% cyan, 66% magenta, 40% yellow, and 0% black; and Color 2 is 40% cyan, 20% magenta, 30% yellow, and 10% black, the resulting hard color is 40% cyan, 66% magenta, 40% yellow, and 10% black.
+
+			Soft Mix
+
+			Makes the underlying colors visible through the overlapping artwork, and then divides the image into its component faces. You specify the percentage of visibility you want in the overlapping colors.
+
+			Trap
+
+			Compensates for potential gaps between colors in artwork by creating a small area of overlap (called a trap) between two adjoining colors.
+
+
+Compound Shape
+-
+	Editable art consisting of 2+ objects, each assigned shape mode.
+
+	Compound shapes act as grouped objects, and appear as <Compound shape> items in the layers panel. You can use the Layers panel to show, select, and manipulate the contents of a compound shape—for example, to change the stacking order of its components. You can also use the Direct Selection tool.
+
+	When you create a compound shape, it takes on the paint and transparency attributes of the topmost component in Add, Intersect, or Exclude mode. Subsequently, you can change the paint, style, or transparency attributes of the compound shape. Illustrator facilitates this process by automatically targeting the whole compound shape when you select any part of it, unless you explicitly target a component in the Layers panel.
+
+	Creating a compound shape is a two-part process. First, you establish a compound shape in which all components have the same shape mode. Then, you assign shape modes to the components until you obtain the desired combination of shape areas.
+
+
+	CREATE COMPOUND SHAPE
+	Select all the objects you want to be part of the compound shape.
+	You can include paths, compound paths, groups, other compound shapes, blends, text, envelopes, and warps in a compound shape. Any open paths you select are automatically closed.
+
+	Do one of the following:
+		In the Pathfinder panel, Alt-click (Windows) or Option-click (Mac OS) a Shape Modes button. Each component of the compound shape is assigned the shape mode you select.
+
+		Select Make Compound Shape from the Pathfinder panel menu. Each component of the compound shape is assigned the Add mode by default.
+
+
+Compound Path
+-
+	A compound path contains two or more paths that are painted so that holes appear where paths overlap. When you define objects as a compound path, all objects in the compound path take on the paint and style attributes of the backmost object in the stacking order.
+
+	Compound paths act as grouped objects and appear as <Compound Path> items in the Layers panel. Use the Direct Selection tool or the Group Selection tool to select part of a compound path. You can manipulate the shape of individual components of a compound path, but you cannot change appearance attributes, graphic styles, or effects for individual components, and you cannot manipulate components individually in the Layers panel.

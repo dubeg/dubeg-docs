@@ -1,0 +1,81 @@
+Cutting and dividing objects
+---
+https://helpx.adobe.com/illustrator/using/cutting-dividing-objects.html
+
+Methods for cutting, dividing, and trimming objects
+
+Illustrator provides the following methods to cut, divide, and trim objects:
+
+Divide Objects Below command
+
+Acts as a cookie cutter or stencil, using a selected object to cut through other objects, discarding the original selection. To use this command, choose Object > Path > Divide Objects Below.
+
+Cut Path At Selected Anchor Point button 
+
+
+
+Cuts a path at the anchor point and the one anchor point becomes two anchor points with one located directly on top of the other. To access this button, select one or more anchor points with the Direct Selection tool and locate the button in the Control panel.
+
+Knife tool 
+
+
+
+Cuts objects along a freehand path you draw with the tool, dividing objects into their component filled faces (a face is an area undivided by a line segment). Click and hold the Eraser tool to see and choose the Knife tool. See Cut objects with the Knife tool.
+
+Scissors tool 
+
+
+
+Splits a path, graphics frame, or empty text frame at an anchor point or along a segment. Click and hold the Eraser tool to see and choose the Scissors tool. See Split a path.
+
+Split Into Grid command
+
+Lets you divide one or more objects into multiple rectangular objects arranged in rows and columns. You can precisely change the height, width, and gutter size between rows and columns, and quickly create guides for laying out artwork. To use this command, choose Object > Path > Split Into Grid.
+
+Compound paths and compound shapes
+
+Let you use an object to cut a hole in another object.
+
+Pathfinder effects
+
+Provide various ways to divide and trim overlapping objects.
+
+Clipping masks
+
+Let you use an object to hide portions of other objects. See Clipping masks
+
+
+
+
+
+Cut objects with the Divide Objects Below command
+
+Select the object to use as a cutter, and position it so that it overlaps the objects to cut.
+Choose Object > Path > Divide Objects Below.
+To the top
+Cut objects with the Knife tool
+
+Select the Knife tool . Click and hold the eraser tool to see and select the Knife tool. See Select a tool for other methods of selecting tools.
+Do one of the following:
+To cut in a curved path, drag the pointer over the object.
+
+To cut in a straight path, hold down Alt (Windows) or Option (Mac OS) as you click on the artboard with the Knife tool, and then drag.
+
+
+Divide an object into a grid
+
+Select the object.
+If you select more than one object, the resulting grid of objects uses the appearance attributes of the topmost object.
+
+Choose Object > Path > Split Into Grid.
+Enter the number of rows and columns you want.
+(Optional) Do any of the following:
+To set the size of each row and column, enter values for Height and Width.
+
+To set the amount of space that separates rows from one another and columns from one another, enter values for Gutter.
+
+To change the dimensions of the entire grid of objects, enter values for Total.
+
+To add guides along the row and column edges, select Add Guides.
+
+Click OK.

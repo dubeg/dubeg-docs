@@ -1,0 +1,168 @@
+Pacman
+-------------------------------------------------
+
+# Sync repos and upgrade packages outofdate.
+$ pacupg
+
+
+# Install package from repos
+$ pacin <package1> <package2> ...
+
+
+# Install custom built package
+>_ pacins /path/to/<package>
+
+
+# Completely remove locally installed package
+>_ pacrem <package>
+
+
+# Display info about a package (e.g. size, dependencies) in the repos:
+>_ pacreps <keywords>
+
+
+Note: Alias are merely example. Rename alias as convenient.
+Ex:  
+alias pacrem='sudo pacman -Rns'
+alias pacout='sudo pacman -Rns'
+
+
+-------------------------------------------------
+ Operations and Bash syntax
+-------------------------------------------------
+
+# To Install a number of packages sharing similar patterns in names
+>_ pacman -S kde-{applets,theme,tools}
+
+
+# 
+>_  
+
+
+Note: incomplete section.
+
+
+-------------------------------------------------
+ Maintenance
+-------------------------------------------------
+
+
+LISTING INSTALLED PACKAGES WITH SIZE
+
+
+USE 
+>_ pacsysclean
+
+
+INSTALL 'expac' and run :
+>_ expac -s "%-30n %m" | sort -rhk 2
+
+
+PRODUCE list of all installed packages with their respective sizes
+on the system.
+
+>_ pacgraph -c
+
+Note: Pacgraph available from community.
+
+
+LIST explicitly installed packages not in base or base-devel with size and desc:
+>_ expac -HM "%011m\t%-20n\t%10d" $( comm -23 <(pacman -Qqen|sort) <(pacman -Qqg base base-devel|sort) ) | sort -n
+
+
+
+LISTING INSTALLED PACKAGES WITH VERSION
+
+LIST all explicitly installed packages: 
+>_ pacman -Qe
+
+
+LIST all foreign packages (manually downloaded and installed)
+>_ pacman -Qm
+
+
+LIST all native packages (installed form sync database(s))
+>_ pacman -Qn
+
+
+LIST packages by regex:
+>_ pacman -Qs <regex> | awk 'BEGIN { RS="\n" ; FS="/" } { print $2 }' | awk '{ if(NF > 0) print $1, $2 }'
+
+
+Install expac and run:
+>_ expac -s "%-30n %v"
+
+
+LIST all packages with version and repo:
+    Install yaourt and run:
+    >_ yaourt -Q 
+
+
+
+-------------------------------------------------
+ Removing orphaned packages
+-------------------------------------------------
+
+# For recursively removing orphans and their configuration files: 
+>_ pacman -Rns $(pacman -Qtdq)
+
+
+~/.bashrc
+-------------------------------------------------
+# '[r]emove [o]rphans' - recursively remove ALL orphaned packages
+alias pacro="/usr/bin/pacman -Qtdq > /dev/null && sudo /usr/bin/pacman -Rns \$(/usr/bin/pacman -Qtdq | sed -e ':a;N;\$!ba;s/\n/ /g')"
+
+
+Note: The above scripts and commands have limitations as 
+    they do not take into account optional dependencies. 
+    This bears the risk to remove packages which actually are not orphans. 
+    To make sure that only real orphans are removed, 
+    use pkg-list_true_orphans from the package pkg_scripts.
+
+
+-------------------------------------------------
+ Listing changed config files
+-------------------------------------------------
+# If you want to backup your system configuration files you could copy all files in /etc/, 
+# but usually you are only interested in the files that you have changed. 
+>_ pacman -Qii | awk '/^MODIFIED/ {print $2}'
+
+
+
+-------------------------------------------------
+ Installing packages from external devices (USB, CD, etc)
+-------------------------------------------------
+
+DOWNLOAD packages :
+
+>_ cd ~/Packages
+>_ pacman -Syw base base-devel grub-bios xorg gimp --cachedir .
+>_ repo-add ./custom.db.tar.gz ./*
+
+
+INSTALL package:
+
+1. Mount media:
+   > mkdir /mnt/repo
+   > mount /dev/sr0 /mnt/repo   #For CD/DVD
+   > mount /dev/sdxY /mnt/repo  #For USB stick
+
+2. Edit 'pacman.conf' and add this repo before the other ones (extra, core, etc.).
+   This way, it ensures that the files from CD/DVD/USB take precedence
+   over those in the standard repo.
+
+   /etc/pacman.conf
+   -------------------------------------------------
+   [custom]
+   SigLevel = PackageRequired
+   Server = file:///mnt/repo/Packages
+
+3. Sync the pacman database to be able to use the new repo:
+   > pacman -Sy 
+
+
+-------------------------------------------------
+ Backing up / Retrieving list of installed packages
+-------------------------------------------------
+
+Note: incomplete section.

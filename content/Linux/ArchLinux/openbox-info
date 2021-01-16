@@ -1,0 +1,131 @@
+Openbox
+=================================================
+
+Stacking window manager, with extensive stds support.
+
+
+
+
+Installation
+-------------------------------------------------
+
+Xinitrc or SLiM, add to: 
+    ~/.xinitrc
+the following line:
+    exec openbox-session
+
+Note: 
+    Specifying openbox instead will prevent autostart in:
+    /etc/xdg/autostart
+
+    xinitrc is a script read by xinit and by its front-end startx.
+    Mainly used to execute DE, WM and other programs when starting
+    the X server.  
+
+Others:
+    incomplete section.
+
+
+
+Configuration
+-------------------------------------------------
+
+Four key files:
+    rc.xml
+    menu.xml
+    autostart
+    environment
+
+Create local openbox profile:
+
+    > mkdir -p ~/.config/openbox
+    > cp -R /etc/xdg/openbox/* ~/.config/openbox
+
+
+rc.xml
+    Main configuration file:
+        - Keyboard shortcuts
+        - Theming
+        - Desktop and virtual desktop settings
+        - Application Window settings
+
+menu.xml
+    Defines type and behavior of desktop menu,
+    accessible by the right-click on bg.
+
+    Default is static (not auto-updated when new apps are installed ).
+
+autostart
+    Autostart applications.
+
+    Openbox can also use .desktop files installed by some packages
+    in the global directory:
+        /etc/xdg/autostart
+    Requires:
+        python2-xdg
+
+    Lines in file follow the format:
+        (sleep <number of seconds>s && <command>) &
+
+environment
+    Used to export and set relevant env. variables such as to:
+        - Define new pathways 
+        - Change language settings
+        - Define other variables to be used (the fix for GTK theming could be listed here)
+
+
+GUI Configuration
+-------------------------------------------------
+    
+Graphical apps to configure Openbox desktop:
+    - obconf                        # Basic Openbox config manager
+    - lxappearance-obconf           # LXDE configuration manager
+    - lxinput                       # LXDE keyboard and mouse config
+    - lxrandr                       # LXDE monitor config
+
+
+Openbox reconfiguration
+-------------------------------------------------
+
+Openbox will not always auto reflect any changes made to its config files 
+without a session.
+
+As a consequence, it will be necessary to manually reload those files:
+    > openbox --reconfigure
+
+As a keybinding:
+    ~/.config/openbox/rc.xml
+add
+    <keybind key="W-F11">
+        <action name="Reconfigure"/>
+    </keybind>
+
+
+Keybinding
+-------------------------------------------------
+
+Window snapping:
+
+<keybind key="W-Left">
+    <action name="UnmaximizeFull"/>
+    <action name="MaximizeVert"/>
+    <action name="MoveResizeTo">
+        <width>50%</width>
+    </action>
+    <action name="MoveToEdge"><direction>west</direction></action>
+</keybind>
+<keybind key="W-Right">
+    <action name="UnmaximizeFull"/>
+    <action name="MaximizeVert"/>
+    <action name="MoveResizeTo">
+        <width>50%</width>
+    </action>
+    <action name="MoveToEdge"><direction>east</direction></action>
+</keybind>
+
+<keybind key="W-Down">
+   <action name="Unmaximize"/>
+</keybind>
+<keybind key="W-Up">
+   <action name="Maximize"/>
+</keybind>

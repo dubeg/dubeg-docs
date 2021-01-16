@@ -1,0 +1,306 @@
+@charset "utf-8";
+/*
+ =============================================
+    Defaults
+ =============================================
+*/
+html
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body
+{
+	margin:0;
+	font-family:'Roboto';
+}
+a
+{
+	text-decoration: none;
+	color:inherit;
+}
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+h1,h2,h3,h4,h5,h6
+{
+	margin:0;
+}
+p{margin:0;}
+
+/*
+ =============================================
+    Global
+ =============================================
+*/
+.container
+{
+	position:relative;
+	max-width:1200px;
+	margin:auto;
+	padding:0 2em;
+}
+
+
+/*
+ =============================================
+  Header
+ =============================================
+*/
+.main-header
+{
+	background-color:rgb(74, 74, 74);
+	position:relative;
+	padding:1em 0;
+}
+.main-header .container
+{
+	display:flex;
+	flex-flow:row;
+	align-items:center;
+}
+.main-header-logo-bg
+{
+	display:none;
+}
+.main-header-logo
+{
+	width: 100px;
+	height:100px;
+	order:1;
+}
+
+/*
+   Navigation
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+.main-nav
+{
+	order:2;
+	margin-left:1.5em;
+	margin-right:auto;
+	margin-top:0.6em;
+	margin-bottom:1em;
+}
+.main-nav-link
+{
+	display:inline-block;
+	margin-right:0.8em;
+
+	color:white;
+	font-weight:bold;
+	border-bottom: 3px solid transparent;
+}
+.main-nav-link-selected
+{
+	border-bottom-color:white;
+}
+
+/*
+   Social Media
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+.social-medias
+{
+	order:3;
+	display:flex;
+	flex-flow:row;
+}
+.social-media
+{
+	display:block;
+	width :1.4em;
+	height:1.4em;
+	margin-left:0.5em;
+
+	cursor:pointer;
+	color:transparent;
+	background-color: white;
+}
+
+
+/*
+ =============================================
+  Page header
+ =============================================
+*/
+.page-header
+{
+	background-color: rgb(64, 195, 113);
+	color:rgb(240,240,240);
+
+	padding-top:0.8em;
+	padding-bottom:0em;
+}
+
+.page-header-title
+{
+	font-family:'Martel';
+	font-size:3em;
+}
+
+/*
+   Breadcrumbs
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+.breadcrumbs
+{
+}
+.breadcrumb
+{
+	font-weight:400;
+	margin-right:0.4em;
+}
+.breadcrumb-sep
+{
+	opacity:0.8;
+}
+
+
+/*
+ =============================================
+  Sections
+ =============================================
+*/
+.section
+{
+	background-color: rgb(255,255,255);
+	border-bottom:3px solid rgb(230,230,230);
+
+	padding:4em 0;
+}
+.section-alt
+{
+	background-color: rgb(255,255,255);
+}
+
+.section-title
+{
+	font-family:'Martel';
+	color:rgb(17, 183, 81);
+	font-size:2.5em;
+	margin-bottom:0.5em;
+}
+
+/*
+   News
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+.news-info
+{
+	float:left;
+	width:50%;
+	padding:0.5em;
+}
+.news-title
+{
+	color:rgb(0,89,163);
+	font-size:1.5em;
+	margin:0.5em 0;
+}
+.news-date
+{
+	color:rgb(100,100,100);
+	font-size:0.8em;
+}
+.news-permalink
+{
+	color:rgb(214,11,81);
+	border-bottom:1px solid rgb(214,11,81);
+}
+
+
+/*
+   News ~ Image
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+.news-image-clipping-mask
+{
+	float:right;
+	height:14em;
+	width:45%;
+	overflow-x:hidden;
+	overflow-y:hidden;
+	border:2px solid rgb(0,89,163);
+	background-color: rgb(200,200,200);
+}
+.news-image
+{
+	margin-left:0em;
+}
+.news-paragraph-lead
+{
+	margin-top:1em;
+	margin-bottom:1em;
+}
+
+
+/*
+   Activities
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+.activities-table
+{
+	width:100%;
+	border-spacing:0;
+	text-align:left;
+}
+.activities-table th
+{
+	padding:1em;
+	text-align: left;
+	color: rgb(0,89,163);
+	border-bottom: 2px solid rgb(0,89,163);
+	border-top: 2px solid rgb(0,89,163);
+}
+.activities-table caption
+{
+	color: rgb(0,89,163);
+	font-size:1.5em;
+	font-weight: bold;
+	text-align: left;
+	padding-bottom: 1em;
+}
+.activities-table thead
+{
+	color:white;
+	letter-spacing: 0.08em;
+}
+
+.activities-table td
+{
+	padding:0.5em 1em;
+	color:rgb(0,89,163);
+	color:rgb(23,65,127);
+}
+.activities-table tr:nth-child(even) td
+{
+	background-color: rgb(230,230,240);
+}
+
+
+
+
+
+
+/*
+ =============================================
+  Footer
+ =============================================
+*/
+.main-footer
+{
+	border-top:4px solid rgb(64, 204, 113);
+	padding:1em 0;
+	background-color: rgb(74, 74, 74);
+	color:white;
+}

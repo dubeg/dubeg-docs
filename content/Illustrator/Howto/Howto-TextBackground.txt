@@ -1,0 +1,13 @@
+======================
+Add Background to text
+======================
+
+Howto
+-----
+	1. Create inline type object.
+	2. Select Appearance.
+	3. Add new Fill.
+	4. With the Fill selected, go to ..
+		: Effect -> "Convert to Shape" -> Rectangle
+	5. In the Appearance panel, ..
+		: Move the Characters row above the new Fill.

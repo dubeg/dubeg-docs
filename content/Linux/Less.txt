@@ -1,0 +1,11 @@
+Less
+====
+	Terminal pager program on Unix, Windows, and others.
+	Used to view the contents of a text file one screen at a time.
+	Similar to 'more', but with extended capability to go backward.
+	
+Keyboard Commands
+------------------
+	q 			Quit
+	spacebar	Next page
+	b 			Previous page

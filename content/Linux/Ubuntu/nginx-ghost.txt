@@ -1,0 +1,61 @@
+# ====================================
+# Redirect http to https
+# ====================================
+server {
+        listen 80;
+        server_name dubeg.ca www.dubeg.ca;
+        return 301 https://www.dubeg.ca$request_uri;
+}
+
+# ====================================
+# Redirect https://dubeg.ca 
+#			-> https://www.dubeg.ca
+# ====================================
+server {
+        listen 443 ssl;
+        server_name dubeg.ca;
+        return 301 $scheme://www.dubeg.ca$request_uri;
+
+        ssl_certificate /etc/letsencrypt/live/dubeg.ca/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/dubeg.ca/privkey.pem;
+
+        ssl_prefer_server_ciphers On;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS;
+}
+
+# ====================================
+# Proxy https://www.dubeg.ca to Ghost
+# ====================================
+server {
+        listen 443 ssl;
+        server_name www.dubeg.ca;
+        client_max_body_size 10M;
+
+        location / {
+                proxy_pass http://localhost:2368;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Host $http_host;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_buffering off;
+        }
+
+        ssl_certificate /etc/letsencrypt/live/dubeg.ca/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/dubeg.ca/privkey.pem;
+
+        ssl_prefer_server_ciphers On;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_ciphers ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS;
+
+
+        location ~ ^/(sitemap.xml|robots.txt) {
+                root /var/www/ghost/public;
+        }
+
+
+		# Setup for renewal of SSL certificates
+		# -------------------------------------
+        location ~ ^/.well-known {
+               root /var/www/ghost;
+        }
+}

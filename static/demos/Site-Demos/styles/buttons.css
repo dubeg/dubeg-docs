@@ -1,0 +1,124 @@
+.buttons .group
+{
+	margin:1em;
+	white-space:nowrap;
+}
+
+.buttons 
+.btn
+{
+	transition:none;
+
+	cursor:pointer;
+	outline: none;
+
+	font-weight: bolder;
+	font-size:14px;
+	padding:1em;
+
+	border-radius:none;
+	border:none;
+
+	color:black;
+	background-color:white;
+	border:2px solid black;
+}
+
+.buttons .btn.left
+{
+    border-right:transparent;
+	border-radius:10px 0px 0px 10px;	
+}
+.buttons .btn.right
+{
+    border-left-color:transparent;
+	border-radius:0 10px 10px 0;
+}
+
+/* =========================================== 
+Button 
+=============================================*/
+.v1
+.btn
+{
+	background-color: transparent;
+	color:rgb(232,76,61);
+
+	border: 2px solid rgb(232,76,61);
+}
+.v1 .btn.right,
+.v1 .btn:hover
+{
+	background-color: rgb(232,76,61);
+	color:white;
+}
+/* =========================================== 
+Button 2
+=============================================*/
+.v2
+.btn
+{
+	background-color:#cb4e4e;
+	border-color:#cb4e4e;
+	box-shadow: 0 3px #ab3c3c;
+	color:white;
+}
+.v2 .btn.right,
+.v2 .btn:active
+{
+	position:relative;
+	top:3px;
+	box-shadow: none;
+	color:white;
+}
+/* =========================================== 
+Button 3
+=============================================*/
+.v3
+.btn
+{
+	background-color:#2ac56c;
+	border-color:#2ac56c;
+	box-shadow: 0 3px #17aa56;
+	color:white;
+}
+.v3 .btn.right,
+.v3 .btn:active
+{
+	position:relative;
+	top:3px;
+	box-shadow:none;
+}
+/* =========================================== 
+Button 4
+=============================================*/
+.v4
+.btn
+{
+	color:#17aa56;
+	border:2px solid #17aa56;
+}
+.v4 .btn.right,
+.v4 .btn:hover
+{
+	box-shadow:none;
+	background-color:#17aa56;
+	color:white;
+}
+/* =========================================== 
+Button 5
+=============================================*/
+.v5
+.btn
+{
+	border-color:#0e83cd;
+	color:#0e83cd;
+	border:2px solid#0e83cd;
+}
+.v5 .btn.right,
+.v5 .btn:hover
+{
+	box-shadow:none;
+	background-color:#0e83cd;
+	color:white;
+}

@@ -1,0 +1,68 @@
+cdm
+=================================================
+
+Installation
+-------------------------------------------------
+1. Install 'cdm-git' 
+
+2. Ensure no other dm get started by disabling their systemd service.
+  Ex: systemctl disable gdm.service
+
+
+
+Notes
+-------------------------------------------------
+A script called zzz-cdm.sh will be placed in :
+    /etc/profile.d
+This script is run when you login to a login shell.
+However, in order to prevent a scenario where a broken config
+prevents a user from accessing both their desktop and a virtual terminal,
+the script checks to see which virtual terminal it is being run on,
+and will by default run on tty1.
+
+If you would rather it only run for you, take away exec perms from:
+    /etc/profile.d/zzz-cdm.sh
+and copy the contents of that file into your 
+    ~/.bash_profile
+
+
+
+Configuration
+-------------------------------------------------
+Edit :
+    /etc/cdmrc
+
+User-specific config by copying :
+    /etc/cdmrc
+to 
+    $HOME/.cdmrc
+
+
+
+Theming
+-------------------------------------------------
+
+Themes located in:
+    /usr/share/cdm/themes
+
+Pass full path of the theme file to:
+    variable: dialogrc
+in
+    /etc/cdmrc
+
+
+
+Ex: dialogrc = /usr/share/cdm/themes/cdm 
+
+
+
+Power management
+-------------------------------------------------
+
+Include 
+    > systemctl reboot
+    > systemctl poweroff
+in
+    /etc/cdmrc
+
+in menu list.

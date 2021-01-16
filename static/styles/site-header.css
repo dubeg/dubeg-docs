@@ -1,0 +1,46 @@
+/* ------------------------------------------
+   Site Header:
+   Header at the top of every page.
+------------------------------------------ */
+.site-header {
+	color:white;
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+	padding-left:1em;
+	padding-right:1em;
+	background-color: #1d4b9e;
+	grid-area: header;
+	display:flex;
+}
+
+.site-header-logo {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.site-header-title
+{
+	font-size:1.2em;
+	margin-left:0.5em;
+}
+
+.side-header-underbar {
+	grid-area: bar;
+	height:5px;
+	background-color: #4d86cc;
+	background: repeating-linear-gradient(
+	  45deg,
+	  #4d86cc,
+	  #4d86cc 10px,
+	  #4d86cc 10px,
+	  #4d86cc 20px
+	);
+	background: repeating-linear-gradient( 
+		45deg,
+		#ffbd79,
+		#ffbd79 10px,
+		#cc4a4a 10px,
+		#cc4a4a 20px 
+	);
+}

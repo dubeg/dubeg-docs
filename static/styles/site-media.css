@@ -1,0 +1,13 @@
+@media (max-width: 780px) {
+	body {
+		grid-template-columns: 0 auto;
+	}
+}
+@media (max-width: 600px) {
+	main {
+		grid-template-columns: minmax(0, auto) 0;
+	}
+	.page-toc {
+		display: none;
+	}
+}
