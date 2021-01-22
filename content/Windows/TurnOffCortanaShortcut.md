@@ -6,6 +6,8 @@ menu:
         parent: Windows
 ---
 
+The Windows shortcut `Win + C` activates a Cortana pop-up.
+
 Set, then restart Explorer & Cortana processes (just in case):
 ```
 HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search
