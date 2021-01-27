@@ -2,7 +2,7 @@ name = "dubeg-docs"
 type = "webpack"
 account_id = "534d2b5abb5e2d1a2d635955dd1f33d8"
 workers_dev = true
-route = "*dubeg.ca/*"
+route = "www.dubeg.ca/*"
 zone_id = "9db329d32e55c9d74cb23395302b922b"
 
 [site]
