@@ -1,10 +1,18 @@
-# Type of networks
+---
+date: 2021-01-27
+title: Types of networks
+menu:
+    sidebar:
+        parent: Networking
+---
 Network: any collection of computers that exchange information with each other.
+
 
 ## Local Area Networks (LANs)
 LANs are usually confined to a limited geographic area.
 - Single building
 - Campus
+
 
 ## Wide Area Networks (WANs)
 Wide area networking combines multiple LANs that are geographically separate.

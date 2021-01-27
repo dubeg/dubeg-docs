@@ -1,4 +1,10 @@
-# Modem vs. router
+---
+date: 2021-01-27
+title: Modem vs. router
+menu:
+    sidebar:
+        parent: Networking
+---
 Both devices server a difference purpose. A router is a small box that allows multiple computers to join the same network.
 
 While early routers provided several Ethernet ports for wired connections, most modern routers offer wireless connectivity as well.

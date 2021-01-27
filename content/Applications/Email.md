@@ -1,4 +1,10 @@
-# Email
+---
+date: 2021-01-27
+title: Email
+menu:
+    sidebar:
+        parent: Applications
+---
 SMTP, POP3 and IMAP are TCP/IP protocols used for mail transmission.
 
 ## SMTP 

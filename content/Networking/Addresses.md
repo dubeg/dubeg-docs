@@ -1,4 +1,10 @@
-# Addresses
+---
+date: 2021-01-27
+title: Addresses
+menu:
+    sidebar:
+        parent: Networking
+---
 
 ## MAC
 Media Access Control (MAC) addresses are used for communication between two hosts in an Ethernet environment. 

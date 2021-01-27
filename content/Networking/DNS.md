@@ -3,7 +3,7 @@ date: 2018-08-17
 title: DNS
 menu:
     sidebar:
-        parent: Tech
+        parent: Networking
 ---
 
 Domain Name System, aka. DNS.
