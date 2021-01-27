@@ -1,4 +1,10 @@
-# Microsoft Defender for Office 365
+---
+date: 2021-01-27
+title: Defender for Office 365
+menu:
+    sidebar:
+        parent: Applications
+---
 
 ## Plan 1
 - Safe Attachments

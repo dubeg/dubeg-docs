@@ -1,4 +1,10 @@
-# Disk to VM
+---
+date: 2021-01-27
+title: Disk to VM
+menu:
+    sidebar:
+        parent: Windows
+---
 
 ## Offline (fast)
 1. CloneZilla: clone disk to disk (~5min)

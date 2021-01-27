@@ -1,16 +1,13 @@
-# README
-- gshaw0.wordpress.com/2017/06/11/build-your-own-thin-ish-client-with-windows-10-ltsb/
-
-- community.spiceworks.com/topic/1240048-suggestions-for-building-out-a-windows-10-kiosk-gpo-to-access-specific-site-only
-
-- www.htguk.com/creating-a-windows-10-internet-kiosk-using-microsoft-edge/
-
-- docs.microsoft.com/en-us/windows/configuration/kiosk-single-app
-
+---
+date: 2021-01-27
+title: Run Program At Startup
+menu:
+    sidebar:
+        parent: Windows
+---
 
 
-Custom User Interface
----------------------
+## Custom User Interface
 GPO (exists in Windows 10, in Enterprise and Pro editions)
 ```
 User Configuration\Administrative Templates\System\Custom User Interface
@@ -29,8 +26,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System
 
 
 
-Shell Launcher
-----------------
+## Shell Launcher
 Use Shell Launcher to replace the default Windows 10 shell with a custom shell. It can be any application or executable as our custom shell, such as a command window or a custom dedicated application, can also configure Shell Launcher to launch different shell applications for different users or user groups.
 
 - Can launch different shell applications for different users or groups.
@@ -71,23 +67,22 @@ Use Shell Launcher to replace the default Windows 10 shell with a custom shell. 
 	+ In Windows 10 v1803: 
 
 
-### References
-- docs.microsoft.com/en-us/windows-hardware/customize/enterprise/shell-launcher
 
 
-
-
-Unified Writer Filter
----------------------
+## Unified Writer Filter
 To avoid Windows being permanently changed, ie. changes are lost upon reboot.
 ```
 Enable-WindowsOptionalFeature -Online -FeatureName Client-UnifiedWriteFilter
 uwfmgr.exe filter enable
 ```
 
+
 ### References
+- docs.microsoft.com/en-us/windows-hardware/customize/enterprise/shell-launcher
 - docs.microsoft.com/en-us/windows-hardware/customize/enterprise/unified-write-filter
-
+- docs.microsoft.com/en-us/windows/configuration/kiosk-single-app
 - developer.microsoft.com/en-us/windows/iot/docs/uwf
-
 - deploymentresearch.com/Research/Post/632/Using-the-Unified-Write-Filter-UWF-feature-in-Windows-10
+- gshaw0.wordpress.com/2017/06/11/build-your-own-thin-ish-client-with-windows-10-ltsb/
+- community.spiceworks.com/topic/1240048-suggestions-for-building-out-a-windows-10-kiosk-gpo-to-access-specific-site-only
+- www.htguk.com/creating-a-windows-10-internet-kiosk-using-microsoft-edge/

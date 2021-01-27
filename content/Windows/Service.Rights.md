@@ -1,4 +1,10 @@
-# Services Rights
+---
+date: 2021-01-27
+title: Service Rights
+menu:
+    sidebar:
+        parent: Windows
+---
 
 GPO
 > Policies, Windows Settings, Security Settings, System Services

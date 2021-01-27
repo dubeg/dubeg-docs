@@ -1,5 +1,10 @@
-# Sandbox
-https://techcommunity.microsoft.com/t5/windows-kernel-internals/windows-sandbox-config-files/ba-p/354902
+---
+date: 2021-01-27
+title: Sandbox
+menu:
+    sidebar:
+        parent: Windows
+---
 
 ```
 <Configuration>
@@ -15,3 +20,6 @@ https://techcommunity.microsoft.com/t5/windows-kernel-internals/windows-sandbox-
 	</LogonCommand>
 </Configuration>
 ```
+
+## References
+- techcommunity.microsoft.com/t5/windows-kernel-internals/windows-sandbox-config-files/ba-p/354902

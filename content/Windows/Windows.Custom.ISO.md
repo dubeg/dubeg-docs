@@ -1,4 +1,11 @@
-Create ISO
+---
+date: 2021-01-27
+title: Create ISO
+menu:
+    sidebar:
+        parent: Windows
+---
+
 ```
 oscdimg.exe 
 	-m 

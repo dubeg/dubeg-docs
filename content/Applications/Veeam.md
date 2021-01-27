@@ -1,4 +1,10 @@
-# Veeam
+---
+date: 2021-01-27
+title: Veeam
+menu:
+    sidebar:
+        parent: Applications
+---
 - Full Backup
 - Incremental backup
 	* Full backup is point-in-time.

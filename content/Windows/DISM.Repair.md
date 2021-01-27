@@ -1,10 +1,10 @@
-# Repair
-- www.tenforums.com/tutorials/7808-use-dism-repair-windows-10-image.html
-- answers.microsoft.com/en-us/windows/forum/windows_10-update/system-file-check-sfc-scan-and-repair-system-files/bc609315-da1f-4775-812c-695b60477a93
-- www.tenforums.com/tutorials/84331-apply-windows-image-using-dism-instead-clean-install.html
-- answers.microsoft.com/en-us/windows/forum/all/windows-10-suddenly-unable-to-boot-after-word/8f50a680-4636-4713-923c-9980d8bc190a
-	+ Dennis Lee Poi seemed to have exactly the same problem.
-
+---
+date: 2021-01-27
+title: DISM Repair
+menu:
+    sidebar:
+        parent: Windows
+---
 
 ```
 dism 
@@ -85,7 +85,12 @@ robocopy C:\Users\Atelier F:\Atelier
 ```
 
 
-
-
-##
 Once you can see the language and regional settings screen when booting from bootable installation media you are running Windows Predeplyment Environment (win PE) which uses Windows Recovery Environment (win RE) to run command prompt or all other available recovery options/tools once you click that "repair windows" button. The hidden recovery partition (<=300MB and NTFS) if created and/or being used has its own winre.wim also. 
+
+
+## References
+- www.tenforums.com/tutorials/7808-use-dism-repair-windows-10-image.html
+- answers.microsoft.com/en-us/windows/forum/windows_10-update/system-file-check-sfc-scan-and-repair-system-files/bc609315-da1f-4775-812c-695b60477a93
+- www.tenforums.com/tutorials/84331-apply-windows-image-using-dism-instead-clean-install.html
+- answers.microsoft.com/en-us/windows/forum/all/windows-10-suddenly-unable-to-boot-after-word/8f50a680-4636-4713-923c-9980d8bc190a
+	+ Dennis Lee Poi seemed to have exactly the same problem.

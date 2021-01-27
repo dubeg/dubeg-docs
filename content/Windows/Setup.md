@@ -1,4 +1,10 @@
-# Windows Setup
+---
+date: 2021-01-27
+title: Personal Setup
+menu:
+    sidebar:
+        parent: Windows
+---
 - Chrome
 	- Set as default.
 	- Login (profile).

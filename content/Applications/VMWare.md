@@ -1,4 +1,10 @@
-# VMWare Virtualization
+---
+date: 2021-01-27
+title: VMWare
+menu:
+    sidebar:
+        parent: Applications
+---
 
 - ESXi (aka. vSphere Hypervisor)
     + Runs on a physical server, hosts 1..N virtual machines.

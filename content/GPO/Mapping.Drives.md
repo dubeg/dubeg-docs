@@ -1,4 +1,10 @@
-# Mapping Drives (GPO Edition)
+---
+date: 2021-01-27
+title: Mapping Drives
+menu:
+    sidebar:
+        parent: GPO
+---
 - Location
 	+ IP
 	+ FQDN, eg. `\\Server\SharedFolder`.

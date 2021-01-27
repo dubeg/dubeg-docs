@@ -1,4 +1,12 @@
-# Windows Server 2016 - Version 1607 (Build 14393.3564)
+---
+date: 2021-01-27
+title: Windows Server 2016
+menu:
+    sidebar:
+        parent: Windows
+---
+
+Version 1607 (Build 14393.3564)
 
 
 ## Update History

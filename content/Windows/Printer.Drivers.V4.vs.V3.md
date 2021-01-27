@@ -1,5 +1,10 @@
-# Printer Drivers
-
+---
+date: 2021-01-27
+title: Printer Drivers
+menu:
+    sidebar:
+        parent: Windows
+---
 
 ## v4
 Starting with V4 drivers, the distribution model on the print server was changed. 
@@ -13,7 +18,6 @@ In this case, the server should firstly send the v4 driver which the vendor prov
 ---
 
 Starting with Windows Server 2012 & Windows 8, Microsoft introduced a new driver model for printing: v4 drivers. The v3 model didn't change much since Windows Server 2000.
-
 
 
 

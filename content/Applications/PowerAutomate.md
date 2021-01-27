@@ -1,3 +1,10 @@
+---
+date: 2021-01-27
+title: Power Automate
+menu:
+    sidebar:
+        parent: Applications
+---
 - Logic Apps
 	+ Platform on which Power Automate is built.
 	+ Hosted in Azure

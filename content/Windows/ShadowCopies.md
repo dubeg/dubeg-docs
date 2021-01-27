@@ -1,6 +1,10 @@
-# Shadow Copies
-- https://docs.microsoft.com/en-us/previous-versions/windows/
-
+---
+date: 2021-01-27
+title: Shadow Copies
+menu:
+    sidebar:
+        parent: Windows
+---
 
 ## For Shared Folders
 Properties
@@ -13,3 +17,7 @@ Defaults
 - At Noon
 - Storage Area: same volume
 - Size: 10% of available space
+
+
+## References
+- docs.microsoft.com/en-us/previous-versions/windows/
