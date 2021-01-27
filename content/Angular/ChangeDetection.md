@@ -1,4 +1,10 @@
-# Change Detection
+---
+date: 2020-01-01
+title: Change Detection
+menu:
+    sidebar:
+        parent: Angular
+---
 - Unidirectional data flow.
     + From top to bottom.
 - No component lower in hierarchy allowed to update properties

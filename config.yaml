@@ -2,6 +2,7 @@ baseURL: 'https://www.dubeg.ca/'
 languageCode: en-us
 title: DUBE.G
 pluralizelisttitles: false
+disablePathToLower: true
 markup:
   highlight:
     codeFences: true

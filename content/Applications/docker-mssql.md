@@ -1,4 +1,11 @@
-# Instructions for running MSSQL under Docker on WSL2
+---
+date: 2018-09-27
+title: Docker MsSQL
+menu:
+    sidebar:
+        parent: Applications
+---
+Instructions for running MSSQL under Docker on WSL2.
 
 ```
 # https://docs.docker.com/docker-for-windows/wsl/
