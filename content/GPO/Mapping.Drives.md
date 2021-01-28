@@ -11,54 +11,42 @@ menu:
 + Reconnect
 	+ Drive will be reconnected upon reboot.
 	+ DUBEG: what does it mean? Won't it be reconnected anyway via the GPO?
-	+ Is it merely setting the PERSISTENT flag of `net use`?
+		- Is it merely setting the PERSISTENT flag of `net use`?
+		- After thinking about it more, I think it is. I recall someone saying group policies can sometimes take a while to apply, and meanwhile a user might already be active in its session. The RECONNECT option would then make it so drives are already mapped at logon, that is, without having to wait on the drive mapping gpo to apply.
+
 - Action
 	+ Create
 		- Creates a new drive mapping.
+		- If the drive (letter) is already mapped, it won't do anything.
 	+ Delete | Remove
 		- Deletes a mapped drive.
 	+ Replace
-		- First, deletes the mapped drive, then create it.
-			+ If the map drive doesn't already exist, nothing bad will happen.
-			  The drive will still be mapped.
-		- This overwrites all existing settings that are associated with the mapped drive.
-		- DUBEG: somehow GPOs are regularly re-applied during the day in active user sessions.
-		  This creates a problem with REPLACE drives, since drives will be deleted & re-mapped.
-		  This affects users that have a FileExplorer window opened at a location in such a drive.
-		  The window will be seemingly unexplicably closed, without a logged crash or error message displayed.
+		- Deletes the drive if already mapped, then creates it.
+		- DUBEG: 
+			+ GPOs are regularly re-applied during the day in active user sessions.
+		  	+ This creates a problem with REPLACE drives, since drives might be deleted & re-mapped while a user is active in its session.
+		  	+ The user might have File Explorer opened at a location of one of these drives, and in that case its window will close seemingly unexplicably: no message or warning displayed.
 	+ Update
-		- Modifies the settings of an existing drive.
 		- If the drive doesn't exist, it will be created.
-		- Only updates the settings defined within the preference item.
-		- All other settings remain as they are.
-			+ Does not update the drive location.
-			+ Does not update the drive name.
-
-## net use
-- PERSISTENT
-	+ If it was ever set to yes, it will remain until the mapped is deleted or until the PERSISTENT flag is specified again.
-
+		- If it already exists, then it modifies its settings (whatever that means).
+			- It won't update the drive path.
+				+ Because that would require re-creating the mapping, ie. removing the mapped drive.
+			- It might update:
+				+ Label (TBD)
+				+ Reconnect (TBD)
+				+ Show / hide (TBD)
 
 
-## Case: change location of a mapped drive
-- Use the Replace action until all comuters are updated.
-	+ DUBEG: how should I do this? Set it up, let it run for a few weeks?
-
-There's a way to run a GPO before another that's link on the same OU, by using the Link Order to our advantage.
-- Click on the targeted OU.
-- Go to: Linked Group Policy Objects.
-- Change the link order.
-
-There's a way to delete a drive before re-mapping it, using the map drive order.
-
-GPO Options
-+ Remove this item when it is no longer applied.
-	* What does it mean? Is it related to Item-Level Targeting?
-+ Apply once and do not reapply.
-	* What does it mean?
+## NET USE
+- /PERSISTENT:YES|NO
+	+ If it was ever set to `YES`, it will remain so until the mapped is deleted or until the PERSISTENT flag is specified again.
 
 
-
+## Disable Background processing for Drive Mappings
+```
+Computer Policy\System\Group Policy\Configure Drive Maps preference extension policy processing
+	[x] Do not apply during periodic background processing
+```
 
 ## Additional Notes
 - Case 1: Update with Reconnect option
@@ -74,12 +62,7 @@ GPO Options
 	+ Run a script on logon. Make sure the correct drives are there, point the correct location. No refreshing in the background. If you need to change the location, just update the script. Life is good. Until you have to manage a ton of different scripts, who needs to run which and whatnot. On a small scale, this may work. But, Group Policy just makes that part so much easier.
 
 
-## Disable Background processing for Drive Mappings
-- Reference: social.technet.microsoft.com/Forums/Office/en-US/06c53d39-4807-4c5c-b37b-b0f39e4bf79d/group-policy-user-drive-mapping-is-set-to-update-how-to-disconnect-while-keeping-update-setting?forum=winserverGP#e0616756-942a-45f5-a1db-cf641f8dfbb5
+- Reference
+	+ social.technet.microsoft.com/Forums/Office/en-US/06c53d39-4807-4c5c-b37b-b0f39e4bf79d/#e0616756-942a-45f5-a1db-cf641f8dfbb5
 
 
-Computer Policy
-```
-SYSTEM\Group Policy\Configure Drive Maps preference extension policy processing
-	Do not apply during periodic background processing: Enabled
-```

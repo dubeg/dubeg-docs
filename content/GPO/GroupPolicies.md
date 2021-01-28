@@ -5,26 +5,30 @@ menu:
     sidebar:
         parent: GPO
 ---
-- Computer startup: Computer Policies are applied.
-- User logs on interactively: user profile is loaded, then User Policies are applied.
+
+## Apply
+- Computer Policies are applied at __computer startup__.
+- User Policies are applied after __user logs on interactively__ & profile is loaded.
 - Policies are also re-applied every 90 minutes (+0-30 minutes offset, randomly chosen), by default.
-	+ Both Computer and User policies
-	+ Security policy settings
+	+ This is true for both Computer and User policies
+	+ About Security policy settings:
 		- If policy targets a group, and user has been added to that group after it logged on, user might need to re-login or refresh its Kerberos token.
-	+ Registry-based policies
+	+ About Registry-based policies:
 		- Attention: even though a registry policy may be applied during a background refresh,
 		  the actual service or program using the registry key might only read it when it launches.
 		  That's why you might need to restart the whole computer, even if the policy has been applied, to force the service/program to restart & read the updated regkey. If you know the actual service/program using that key, you can always try to restart it manually, unless Windows won't like it.
-	+ Not: Application deployment (Software installation)
-	+ Not: Folder redirection settings
-	+ Not: Scripts extension
-		- Policy will be refreshed, but scripts will only be run at computer startup or user logon.
-	+ Not: unmodified GPO
-		- GPOs use a version number.
-		- Once applied, they are not reapplied unless the version number changes or the gpupdate /force commmand is run.
-		- GPO can also be marked as "Enforced" to be re-applied.
+	+ Some policies are not re-applied in the background:
+		+ Application deployment (Software installation)
+			- Only applied at computer startup.
+		+ Folder redirection settings
+		+ Scripts extension
+			- Policy will be refreshed, but scripts will only be run at computer startup or user logon.
+		+ Unchanged GPOs
+			- GPOs use a version number.
+			- Once applied, they are not reapplied unless the version number changes, or the `gpupdate /force` command is run.
+			- A GPO can be marked as "Enforced" to bypass the version number check.
 - Policies can also be applied on demand.
-	+ gpupdate
+	+ Cmd: `gpupdate.exe`
 
 
 ## Processing
@@ -34,26 +38,29 @@ menu:
 
 
 ## Administrative Templates
-Microsoft frequently publishes new templates for new versions of Windows. Each template bundle includes policies from all previous versions, so just install the latest templates on your Domain Controller.
+Microsoft frequently publishes new templates for new versions of Windows. Each template bundle includes policies from all previous versions, so only the latest templates need to be installed on a Domain Controller.
 
 - Install the templates bundle from microsoft.com.
-	+ Goto: docs.microsoft.com/en-us/troubleshoot/windows-client/group-policy/create-and-manage-central-store
-	+ Download latest, such as: `Administrative Templates (.admx) for Windows 10 October 2020 Update (20H2)`
-	+ Install locally, or on server (it doesn't matter).
-- Goto the Domain Controller's folder storing the templates.
+	+ Go to: docs.microsoft.com/en-us/troubleshoot/windows-client/group-policy/create-and-manage-central-store
+	+ Download the latest bundle.
+		+ Eg. `Administrative Templates (.admx) for Windows 10 October 2020 Update (20H2)`
+	+ Install locally or on the target server.
+		- It doesn't matter where, the installation only extracts the templates to the installDir.
+- Go to the Domain Controller's folder storing the templates.
 	+ Eg. `\\<DomainController>\SYSVOL\<DomainName>\Policies\PolicyDefinitions`
-	+ The PolicyDefinitions may not exist, in that case the default templates are currently used.
-	+ Once that folder will exist and be populated, those templates will be used instead.
-- Copy the recently installed templates, from its install location to the DC's templates folder.
+	+ The PolicyDefinitions folder may not exist.
+		- In that case, the templates shipped with Windows are used (`C:\Windows\PolicyDefinitions`).
+		- Once you create that folder, the templates within will be used instead.
+- Copy the recently installed templates to the DC's folder.
 	+ From: `C:\Program Files (x86)\Microsoft Group Policy\<version-specific>\PolicyDefinitions`
 	+ To: `\\<DomainController>\SYSVOL\<DomainName>\Policies\PolicyDefinitions`
-	* It is recommended that you use multiple `PolicyDefinitions-<version>`, to be able to quickly go back to previous templates if an issue arises.
+	* It is recommended that you use multiple `PolicyDefinitions-<version>` folders, to be able to quickly go back to previous templates if an issue arises.
 		+ `..\Policies\PolicyDefinitions`
 			* Templates currently in use.
 		+ `..\Policies\PolicyDefinitions-1909`
 		+ `..\Policies\PolicyDefinitions-20H1`
 		+ `..\Policies\PolicyDefinitions-20H2`
-		+ ...
+		+ Etc.
 - Open GPO Management.
 
 
