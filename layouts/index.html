@@ -11,18 +11,16 @@
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-reset.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-main.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-header.css?{{ now.Unix }}" />
-<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-nav.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-trail.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-footer.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/page-nav.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/page-toc.css?{{ now.Unix }}" />
-<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/index.css?{{ now.Unix }}" />
-<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/index-pagination.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/page-post.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/table.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/page-post-headings-shake.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-social.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-media.css?{{ now.Unix }}" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/search-box.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/syntax-highlighting.css?{{ now.Unix }}" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Noto+Sans+JP:wght@400&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -54,6 +52,19 @@
 <!-- Sidebar -->
 <!-- ================== -->
 <aside class="page-nav">
+<div class="search-box">
+	<svg class="search-box-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+	<input type="search" 
+		name="q" 
+		class="search-input" 
+		autocomplete="off" 
+		autocapitalize="off" 
+		autocorrect="off" 
+		spellcheck="false" 
+		aria-label="Search"
+		>
+</div>
+<div class="page-nav-scroller">
     {{ $currentPage := . }}
     {{ range .Site.Menus.sidebar }}
     <div class="nav-section">
@@ -92,6 +103,7 @@
     	</div>
     </div>
     {{ end }}
+</div>
 </aside>
 <main>
 <!-- ================== -->

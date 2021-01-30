@@ -1,5 +1,6 @@
 // ==================================
 // Change height of sticky div 
+// DUBEG: out-of-use since 2021-01-30.
 // ==================================
 var stickySizer = {
     _updating: false,

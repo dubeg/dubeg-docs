@@ -33,7 +33,7 @@ function main() {
 	// --
 	// Sticky
 	// --
-	stickySizer.Init("page-nav");
+	// stickySizer.Init("page-nav");
 	// --
 	// Expanded-collapsed state.
 	// --

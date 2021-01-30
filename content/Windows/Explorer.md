@@ -101,4 +101,31 @@ Windows Registry Editor Version 5.00
 "Attributes"=dword:f080004d
 
 
+[-HKEY_CURRENT_USER\SOFTWARE\Classes\WOW6432Node\CLSID\{c5125f38-fa3f-41f0-8e5f-a7ee8f38e894}]
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\WOW6432Node\CLSID\{c5125f38-fa3f-41f0-8e5f-a7ee8f38e894}]
+@="Home"
+"System.IsPinnedToNameSpaceTree"=dword:00000001
+"SortOrderIndex"=dword:00000042
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\WOW6432Node\CLSID\{c5125f38-fa3f-41f0-8e5f-a7ee8f38e894}\DefaultIcon]
+@="C:\\windows\\system32\\imageres.dll,-123"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\WOW6432Node\CLSID\{c5125f38-fa3f-41f0-8e5f-a7ee8f38e894}\InProcServer32]
+@=hex(2):25,00,73,00,79,00,73,00,74,00,65,00,6d,00,72,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,73,00,68,00,\
+  65,00,6c,00,6c,00,33,00,32,00,2e,00,64,00,6c,00,6c,00,00,00
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\WOW6432Node\CLSID\{c5125f38-fa3f-41f0-8e5f-a7ee8f38e894}\Instance]
+"CLSID"="{0E5AAE11-A475-4c5b-AB00-C66DE400274E}"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\WOW6432Node\CLSID\{c5125f38-fa3f-41f0-8e5f-a7ee8f38e894}\Instance\InitPropertyBag]
+"Attributes"=dword:00000011
+"TargetFolderPath"=hex(2):25,00,55,00,53,00,45,00,52,00,50,00,52,00,4f,00,46,\
+  00,49,00,4c,00,45,00,25,00,00,00
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\WOW6432Node\CLSID\{c5125f38-fa3f-41f0-8e5f-a7ee8f38e894}\ShellFolder]
+"Attributes"=dword:f080004d
+"FolderValueFlags"=dword:00000028
+
 ```

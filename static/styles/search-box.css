@@ -1,0 +1,22 @@
+.search-box {
+    margin-left: 4px;
+    margin-right: 4px;
+    position: relative;
+}
+
+.search-box-icon {
+    position: absolute;
+    padding-left:4px;
+    height: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: rgb(150,150,150);
+}
+
+.search-input {
+    width: 100%;
+    padding-left: 18px;
+    border: none;
+    background-color: white;
+    outline: 1px solid rgb(230,230,230);
+}

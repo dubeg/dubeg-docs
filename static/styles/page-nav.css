@@ -2,28 +2,45 @@
    Page Navigation:
    Sidebar Hyperlinks
 ------------------------------------------ */
+:root {
+	--sideBarBorderColor: rgb(230,230,230);
+	--sidebarBorder: 1px solid var(--sideBarBorderColor);
+}
+
 .page-nav {
 	position: sticky;
 	top: 0;
 	height:calc(100vh);
-
-	overflow-y: scroll;
-	overscroll-behavior-y: contain;
 	grid-area: sidebar;
-
 	background-color: #f7f7f8;
-	padding-top:0.5em;
-
 	font-family: 'Montserrat', sans-serif;
 	font-size: 12px;
+	padding-top:0.5em;
+	display: flex;
+	flex-direction: column;
+	border-right: var(--sidebarBorder);
 }
 
-.page-nav::-webkit-scrollbar {
+.page-nav-scroller {
+	overflow-y: scroll;
+	overscroll-behavior-y: contain;
+	/* ------------------------------ */
+	/* Delimiter between nav and searchbox above. */
+	/*box-shadow: inset 0px 4px 2px -3px rgba(50, 50, 50, 0.25);*/
+	margin-top: 0.5em;
+	border-top: var(--sidebarBorder);
+	/* ------------------------------ */
+	/* Chrome URL preview overlay hides bottom part of the sidenav otherwise. */
+	margin-bottom: 22px;
+	/*border-bottom: var(--sidebarBorder);*/
+}
+
+.page-nav-scroller::-webkit-scrollbar {
     width: 0.2em;
 }
 
-.page-nav::-webkit-scrollbar-thumb {
-    background: rgba(0,0,20, 0.2);
+.page-nav-scroller::-webkit-scrollbar-thumb {
+    background: rgb(150,150,190);
 }
 
 

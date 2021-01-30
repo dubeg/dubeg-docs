@@ -1,30 +1,12 @@
-/*
-Theme Name: poorvs
-Theme URI: 
-Author: dubeg
-Author URI:
-Description: 
-Version: 0.1
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: poorvs 
-Text Domain: poorvs
-
-This file was previously from the default WP theme.
-'This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.'
-*/
-
-body
-{
+body {
 	font-family:
 				'Open Sans', 
 				sans-serif;
 	display: grid;
 	grid-template-columns: 130px auto;
 	grid-template-areas: 
-		"header header"
-		"bar bar"
+		"sidebar header"
+		"sidebar bar"
 		"sidebar trail"
 		"sidebar content"
 		"sidebar footer"
@@ -42,16 +24,13 @@ main {
 
 }
 
-hr, .ruler
-{
+hr, .ruler {
 	border:none;
 	height:2px;
 	background-color: rgba(99, 122, 145, 0.15);
 }
 
-
-a:focus
-{
+a:focus {
 	/*rgba(255,255,255,0.6);*/
 	outline: 2px solid #abc0da;
 }
