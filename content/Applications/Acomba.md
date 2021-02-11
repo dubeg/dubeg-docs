@@ -7,6 +7,14 @@ menu:
 ---
 
 
+## Open company by default
+Shortcut
+```
+C:\Fortune\Acomba.exe "rep=C:\f1000.dta\CompanyName"
+```
+
+
+
 ## Printing
 - Go to printing config > Check [supplier | etc] > Windows personalisé: Enabled
 	+ Do for every check type (eg. supplier, etc)?
