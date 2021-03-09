@@ -222,3 +222,19 @@ excepting manipulating the query string.
 
 This has the down side of prompting the user after every change of a parameter's value.
 There's a toggle to disable this behavior, but it's probably not recommended (?).
+
+```
+let
+    startDatetime = Excel.CurrentWorkbook(){[Name = "StartDate"]}[Content]{0}[Column1],
+    endDatetime = Excel.CurrentWorkbook(){[Name = "EndDate"]}[Content]{0}[Column1],
+    // -- 
+    startDate = Date.From(startDatetime),
+    endDate = Date.From(endDatetime),
+    // --
+    Source = Sql.Database("hostName\SqlInstanceName,Port", "DatabaseName"),
+    ReportTable = Source{[Schema="SchemaName",Item="TableName"]}[Data],
+    Filtered = Table.SelectRows(ReportTable, each ([Date] >= startDate and [Date] <= endDate)),
+    Buffered = Table.Buffer(Filtered) // Buffer only if query if reused in others.
+in
+    Buffered
+```
