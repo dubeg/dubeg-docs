@@ -6,7 +6,8 @@ menu:
         parent: Office
 ---
 
-# Office ODT
+Office Deployment Tool
+
 - [Docs](docs.microsoft.com/en-us/deployoffice/overview-office-deployment-tool)
 - [Changelog](docs.microsoft.com/en-us/officeupdates/odt-release-history)
 - [Download](www.microsoft.com/en-us/download/details.aspx?id=49117)
@@ -28,7 +29,7 @@ The Office Deployment Tool (ODT) is a command-line tool that you can use to down
 ## Configuration
 - [Docs](http://aka.ms/ODT)
 
-```xml
+```
 <Configuration>
     <Add OfficeClientEdition="64" Channel="xxx">
         <Product ID="xxx">

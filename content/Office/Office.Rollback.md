@@ -1,4 +1,12 @@
-# Rollback to a previous version
+---
+date: 2021-03-09
+title: Rollback
+menu:
+    sidebar:
+        parent: Office
+---
+
+Rollback to a previous version
 ```
 "C:\Program Files\Common Files\microsoft shared\ClickToRun\OfficeC2RClient.exe"
 	/update user updatetoversion=16.0.11629.20196
@@ -82,7 +90,7 @@ OfficeC2RClient.exe
 	/update user
 	variable1=value
 	variable2=value
-	…
+	...
 	variableN=value
 ```
 

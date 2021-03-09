@@ -1,4 +1,10 @@
-# Mailbox Auto-Mapping
+---
+date: 2021-03-09
+title: Mailbox Auto-Mapping
+menu:
+    sidebar:
+        parent: Office
+---
 
 ```
 Connect-ExchangeOnline

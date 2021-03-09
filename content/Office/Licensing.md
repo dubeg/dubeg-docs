@@ -1,4 +1,10 @@
-# Licensing
+---
+date: 2021-03-09
+title: Licensing
+menu:
+    sidebar:
+        parent: Office
+---
 
 ## Volume
 - Right to use on RDS.
@@ -6,7 +12,7 @@
 - Easier license and key management with Volume License Service Center and KMS Server.
 - Easier deployement/imaging.
 - One key for all users/devices (?).
-- 
+
 
 ## Retail
 - Local installation only (!= RDS).
