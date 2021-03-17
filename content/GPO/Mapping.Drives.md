@@ -10,9 +10,9 @@ menu:
 	+ FQDN, eg. `\\Server\SharedFolder`.
 + Reconnect
 	+ Drive will be reconnected upon reboot.
-	+ DUBEG: what does it mean? Won't it be reconnected anyway via the GPO?
+	+ DUBEG:
 		- Is it merely setting the PERSISTENT flag of `net use`?
-		- After thinking about it more, I think it is. I recall someone saying group policies can sometimes take a while to apply, and meanwhile a user might already be active in its session. The RECONNECT option would then make it so drives are already mapped at logon, that is, without having to wait on the drive mapping gpo to apply.
+		- I think it is indeed. I recall someone saying group policies can sometimes take a while to apply, and meanwhile a user might already be active in its session. The RECONNECT option would then make it so drives are already mapped at logon, that is, without having to wait on the drive mapping gpo to apply.
 
 - Action
 	+ Create
@@ -24,8 +24,8 @@ menu:
 		- Deletes the drive if already mapped, then creates it.
 		- DUBEG: 
 			+ GPOs are regularly re-applied during the day in active user sessions.
-		  	+ This creates a problem with REPLACE drives, since drives might be deleted & re-mapped while a user is active in its session.
-		  	+ The user might have File Explorer opened at a location of one of these drives, and in that case its window will close seemingly unexplicably: no message or warning displayed.
+		  	+ This creates a problem with REPLACE drives, since drives might be deleted & re-mapped while a user is active in his session.
+		  		-  Eg. a user might have File Explorer opened at a location of one of these drives, and in that case its window will close seemingly unexplicably: no message or warning displayed.
 	+ Update
 		- If the drive doesn't exist, it will be created.
 		- If it already exists, then it modifies its settings (whatever that means).
@@ -37,16 +37,17 @@ menu:
 				+ Show / hide (TBD)
 
 
-## NET USE
-- /PERSISTENT:YES|NO
-	+ If it was ever set to `YES`, it will remain so until the mapped is deleted or until the PERSISTENT flag is specified again.
-
-
-## Disable Background processing for Drive Mappings
+## Disable background processing
+If using the REPLACE action for mapped drives, it might be worthwhile to disable the recurrent background processing of the gpo.
 ```
 Computer Policy\System\Group Policy\Configure Drive Maps preference extension policy processing
 	[x] Do not apply during periodic background processing
 ```
+
+DUBEG: the only caveat with this configuration is the following: a user who never logs in while connected to the Domain network. In that case, the drive mappings GPO never has a chance to be applied successfully: it will fail during logon, and it won't be re-applied later when the user might be connected to the network.
+
+
+
 
 ## Additional Notes
 - Case 1: Update with Reconnect option
@@ -66,3 +67,7 @@ Computer Policy\System\Group Policy\Configure Drive Maps preference extension po
 	+ social.technet.microsoft.com/Forums/Office/en-US/06c53d39-4807-4c5c-b37b-b0f39e4bf79d/#e0616756-942a-45f5-a1db-cf641f8dfbb5
 
 
+
+## NET USE
+- /PERSISTENT:YES|NO
+	+ If it was ever set to `YES`, it will remain so until the mapped is deleted or until the PERSISTENT flag is specified again.
