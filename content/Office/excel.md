@@ -14,6 +14,8 @@ What's annoying is that the new window is opened in the same Virtual Desktop as 
 
 The Excel executable defines a bunch of command-line [switches](https://support.office.com/en-us/article/079164cd-4ef5-4178-b235-441737deb3a6), but we're interested in the `/x` switch. It opens a separate Excel instance, and keeps us in our current virtual desktop. We'll use this switch in the solutions below.
 
+
+
 ### File Explorer
 
 __With Office 365 installed via the Windows Store:__

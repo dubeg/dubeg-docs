@@ -6,6 +6,10 @@ menu:
         parent: Office
 ---
 
+When a user is added as a delegate with `FullAccess` on a mailbox, a property called `AutoMapping` is set which will make their desktop Outlook client to automatically add the mailbox in the sidebar. This can be annoying if the user doesn't want to see it.
+
+To avoid having that behavior turned on, you can add the permission using a cmdlet.
+
 ```
 Connect-ExchangeOnline
 Remove-MailboxPermission `

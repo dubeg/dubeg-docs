@@ -221,7 +221,7 @@ There's no real way to create a parameterized SQL query in Power Query,
 excepting manipulating the query string.
 
 This has the down side of prompting the user after every change of a parameter's value.
-There's a toggle to disable this behavior, but it's probably not recommended (?).
+There's a toggle to disable this behavior, but it's probably not recommended.
 
 ```
 let
@@ -237,4 +237,22 @@ let
     Buffered = Table.Buffer(Filtered) // Buffer only if query if reused in others.
 in
     Buffered
+```
+
+
+
+## Function
+Example of a function:
+```
+(sDate as text) =>
+let
+    sParts = Text.Split(sDate, "-"),
+    year = Number.From(sParts{0}),
+    month = Number.From(sParts{1}),
+    day = Number.From(sParts{2}),
+    lastDayOfMonth = Date.EndOfMonth(#date(year, month, 1)),
+    newDay = List.Min({day, Date.Day(lastDayOfMonth)}, 1),
+    Source = #date(year, month, newDay)
+in
+    Source
 ```

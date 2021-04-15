@@ -58,8 +58,8 @@ The Office Deployment Tool (ODT) is a command-line tool that you can use to down
         - 64
         - 32
     + Channel
-        - Monthly (365)
-        - PerpetualVL2019 (2019 Enterprise)
+        - Monthly
+        - PerpetualVL2019
     + Version
         - Eg. `16.0.6741.2056`
     + SourcePath
@@ -67,13 +67,23 @@ The Office Deployment Tool (ODT) is a command-line tool that you can use to down
         * When specified, Version is required.
 - Product
     + ID
-        * Channel Monthly
-            - O365ProPlusRetail
-            - VisioProRetail
-        * Channel PerpetualVL2019
-            - ProPlus2019Volume
-            - VisioPro2019Volume
-            - ProjectPro2019Volume
+        - O365ProPlusRetail
+        - VisioProRetail
+        - ProPlus2019Retail
+        - ProPlus2019Volume
+        - VisioPro2019Volume
+        - ProjectPro2019Volume
+- ExcludeApp
+    + Groove
+    + OneNote
+    + OneDrive
+    + Lync
+    + Publisher
+    + Access
+    + PowerPoint
+    + Excel
+    + Outlook
+    + Word
 
 
 

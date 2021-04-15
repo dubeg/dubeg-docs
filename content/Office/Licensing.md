@@ -1,6 +1,6 @@
 ---
 date: 2021-03-09
-title: Licensing
+title: Types of licenses
 menu:
     sidebar:
         parent: Office

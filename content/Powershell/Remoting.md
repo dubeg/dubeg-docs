@@ -1,5 +1,10 @@
-# Remote Sessions
-DUBEG: couldnt run gitea.exe remotely using Enter-PsSession. IDK why.
+---
+date: 2021-03-21
+title: Remoting
+menu:
+    sidebar:
+        parent: Powershell
+---
 
 Powershell Remoting is essentialy a native Windows remote command
 execution features build on Windows Remote Management protocol.

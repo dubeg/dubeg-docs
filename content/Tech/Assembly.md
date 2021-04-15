@@ -1,6 +1,6 @@
 ---
 date: 2019-03-28
-title: Notes
+title: Notes on Assembly
 menu:
     sidebar:
         parent: Tech

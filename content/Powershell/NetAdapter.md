@@ -1,4 +1,12 @@
-# Net Adapter
+---
+date: 2021-03-21
+title: Net Adapter
+menu:
+    sidebar:
+        parent: Powershell
+---
+
+
 * Get-NetIPConfiguration
 * Get|Set-NetIPInterface # IPv4 or IPv6
 * Set-DnsClientServerAddress
