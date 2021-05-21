@@ -67,10 +67,11 @@ The Office Deployment Tool (ODT) is a command-line tool that you can use to down
         * When specified, Version is required.
 - Product
     + ID
-        - O365ProPlusRetail
-        - VisioProRetail
-        - ProPlus2019Retail
+        - O365ProPlusRetail (latest)
+        - ProPlusRetail (2016)
+        - ProPlus2019Retail (2019)
         - ProPlus2019Volume
+        - VisioProRetail
         - VisioPro2019Volume
         - ProjectPro2019Volume
 - ExcludeApp
