@@ -8,9 +8,9 @@ menu:
 
 Office Deployment Tool
 
-- [Docs](docs.microsoft.com/en-us/deployoffice/overview-office-deployment-tool)
-- [Changelog](docs.microsoft.com/en-us/officeupdates/odt-release-history)
-- [Download](www.microsoft.com/en-us/download/details.aspx?id=49117)
+- [Docs](http://docs.microsoft.com/en-us/deployoffice/overview-office-deployment-tool)
+- [Changelog](http://docs.microsoft.com/en-us/officeupdates/odt-release-history)
+- [Download](http://www.microsoft.com/en-us/download/details.aspx?id=49117)
 
 The Office Deployment Tool (ODT) is a command-line tool that you can use to download and deploy Click-to-Run versions of Office to your client computers.
 
@@ -20,9 +20,9 @@ The Office Deployment Tool (ODT) is a command-line tool that you can use to down
 
 ## Setup.exe
 - Args
-    + `/configure`: install downloaded Office apps, or remove/update installed apps.
-    + `/download`: downloads to a folder.
-    + `/customize`: apply new preferences to installed apps.
+    + `/configure`: install/remove/update (& download if needed) Office apps.
+    + `/download`: downloads Office apps to a folder, for installing later.
+    + `/customize`: apply settings to installed apps.
 
 
 
@@ -90,7 +90,7 @@ The Office Deployment Tool (ODT) is a command-line tool that you can use to down
 
 
 ## Migrate from x86 to x64
-- Cmd: `setup.exe /configure config.xml`
+- `setup.exe /configure config.xml`
 
 config.xml
 ```
