@@ -58,8 +58,10 @@ The Office Deployment Tool (ODT) is a command-line tool that you can use to down
         - 64
         - 32
     + Channel
-        - Monthly
-        - PerpetualVL2019
+        - Current (Might be several updates each month)
+        - Monthly (Update once a month)
+        - SemiAnnual (Every 6 months, Semi-Annuel Enterprise Channel)
+        - PerpetualVL2019 (2019 Pro Plus Volume)
     + Version
         - Eg. `16.0.6741.2056`
     + SourcePath
