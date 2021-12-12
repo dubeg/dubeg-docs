@@ -262,6 +262,7 @@ you need to add shortcuts files in the directory:
 
 ```
 shell:AppData\Microsoft\Windows\Network Shortcuts
+%USERPROFILE%\AppData\Roaming\...
 ```
 
 

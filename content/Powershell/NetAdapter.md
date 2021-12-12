@@ -41,3 +41,9 @@ $interface | Remove-NetRoute
 $interface | Set-NetIpInterface -DHCP Enabled
 $interface | Set-DnsClientServerAddress -ResetServerAddresses
 ```
+
+
+## Profile
+```
+Get-NetConnectionProfile -InterfaceAlias "Ethernet1" | Set-NetConnectionProfile -NetworkCategory Private
+```
