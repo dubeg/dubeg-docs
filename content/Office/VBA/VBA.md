@@ -1,4 +1,11 @@
-# VBA
+---
+date: 2020-07-31
+title: VBA
+menu:
+    sidebar:
+        parent: Office
+---
+
 
 ## Datatypes
 - Variant

@@ -1,4 +1,12 @@
-# Excel Online - Scripting
+---
+date: 2020-07-31
+title: AddIns - Development
+menu:
+    sidebar:
+        parent: Office
+---
+
+## Excel Online - Scripting
 - Name: Office Add-ins
 - Distributed via a store|catalog.
 - Sideloading
@@ -122,3 +130,19 @@ I think a nodeJs script is creating this regKey when we execute "npm start" in a
 ```
 HKCU\Software\Microsoft\Office\16.0\WEF\Developer
 ```
+
+
+
+## References
+- github.com/OfficeDev/office-js-snippets/tree/master/samples/excel
+- docs.microsoft.com/en-us/learn/modules/intro-office-add-ins/
+	+ Introduction
+	+ Office add-ins fundamentals
+	+ Office JavaScript APIs
+	+ Customize Office add-ins
+	+ Testing, debugging, deployment options for Office add-ins
+	+ Summary
+
+
+- docs.microsoft.com/en-us/office/dev/add-ins/tutorials/excel-tutorial
+- docs.microsoft.com/en-us/office/dev/add-ins/reference/requirement-sets/excel-api-1-1-requirement-set
