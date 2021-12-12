@@ -1,19 +1,17 @@
-var summaryInclude = 60;
+var summaryInclude = 60 * 3; // Chars to include per result.
 var fuse = null;
 var fuseOptions = {
     shouldSort: true,
     includeMatches: true,
     threshold: 0.0,
-    tokenize: true,
     location: 0,
     distance: 100,
-    maxPatternLength: 32,
-    minMatchCharLength: 1,
+    minMatchCharLength: 3,
     keys: [
         {name: "title", weight: 0.8},
-        {name: "contents", weight: 0.5},
-        {name: "tags", weight: 0.3},
-        {name: "categories", weight: 0.3}
+        {name: "contents", weight: 0.5}
+        // {name: "tags", weight: 0.3},
+        // {name: "categories", weight: 0.3}
     ]
 };
 
@@ -40,6 +38,8 @@ function init() {
                 toggleResultBox(open = false);
                 return;
             }
+            else if (event.key === "Enter") 
+                return;
             let query = tbSearch.value;
             if (!query) toggleResultBox(open = false);
             else search(query, false);
@@ -108,64 +108,37 @@ function populateResults(results, queryToHighlight) {
     let searchQuery = queryToHighlight;
     let templateDefinition = searchResultTemplate.innerHTML;
     htmlResult = "";
+    console.log(results);
     results.forEach(function (value, key) {
-        let contents = value.item.contents;
-        let snippet = "";
-        let snippetHighlights = [searchQuery];
-        snippet = contents.substring(0, summaryInclude * 2) + '&hellip;';
-        let tags = "";
-        if (value.item.tags) {
-            value.item.tags.forEach(function (element) {
-                tags = tags + "<a href='/tags/" + element + "'>" + "#" + element + "</a> "
-            });
-        }
+        // ---------------
+        let matches = value.matches
+        // matches = [ {indices:[[startIdx,endIdx]], key:"<itemProperty>", value:"<queryTerm>" ]
+        // ---------------
+        let item = value.item;
+        let contents = item.contents;
+        let snippet = contents.substring(0, summaryInclude) + '&hellip;';
         let output = render(templateDefinition, {
             key: key,
-            title: value.item.title,
-            link: value.item.permalink,
-            tags: tags,
-            categories: value.item.categories,
+            title: item.title,
+            link: item.permalink,
             snippet: snippet
         });
         htmlResult += output;
-        // ------------
-        // TODO:
-        // Replace document by unattached DOM model.
-        // ------------
-        // snippetHighlights.forEach(function (snipvalue, snipkey) {
-        //     let instance = new Mark(document.getElementById('summary-' + key));
-        //     instance.mark(snipvalue);
-        // });
     });
+    // TODO: add mark.js (highlight matches)
     searchResults.innerHTML = htmlResult;
 }
 
 function render(templateString, data) {
-    var conditionalMatches, conditionalPattern, copy;
-    conditionalPattern = /\$\{\s*isset ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
-    //since loop below depends on re.lastInxdex, we use a copy to capture any manipulations whilst inside the loop
-    copy = templateString;
-    while ((conditionalMatches = conditionalPattern.exec(templateString)) !== null) {
-        if (data[conditionalMatches[1]]) {
-            //valid key, remove conditionals, leave contents.
-            copy = copy.replace(conditionalMatches[0], conditionalMatches[2]);
-        } else {
-            //not valid, remove entire section
-            copy = copy.replace(conditionalMatches[0], '');
-        }
-    }
-    templateString = copy;
-    //now any conditionals removed we can do simple substitution
-    var key, find, re;
-    for (key in data) {
-        find = '\\$\\{\\s*' + key + '\\s*\\}';
-        re = new RegExp(find, 'g');
-        templateString = templateString.replace(re, data[key]);
-    }
-    return templateString;
+    let x = templateString;
+    x = x.replaceAll('{key}', data.key);
+    x = x.replaceAll('{title}', data.title);
+    x = x.replaceAll('{link}', data.link);
+    x = x.replaceAll('{snippet}', data.snippet);
+    return x;
 }
 
-function debounce(func, timeout = 300){
+function debounce(func, timeout = 200){
   let timer;
   return (...args) => {
     clearTimeout(timer);

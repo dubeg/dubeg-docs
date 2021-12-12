@@ -23,6 +23,7 @@
     color:white;
     outline: none;
     border-bottom: 1px solid transparent;
+    border-radius: 3px;
 }
 
 .search-input:focus {
