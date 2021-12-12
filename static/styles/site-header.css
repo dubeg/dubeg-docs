@@ -19,10 +19,14 @@
 	align-items: center;
 }
 
-.site-header-title
-{
+.site-header-title {
 	font-size:1.2em;
 	margin-left:0.5em;
+}
+
+.site-header-search {
+	margin-left: auto;
+	position: relative;
 }
 
 .side-header-underbar {

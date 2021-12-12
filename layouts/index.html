@@ -36,6 +36,47 @@
 	    href="{{ .Site.BaseURL }}">
 	    DUBE.G's <span style="font-variant: all-small-caps;">Docs</span>
 	</a>
+	<!-- ============================-->
+	<!-- Search -->
+	<!-- ============================-->
+	<div class="site-header-search">
+		<div class="search-box">
+			<svg class="search-box-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+			<input 
+				id="search-query"
+				type="search" 
+				name="q" 
+				class="search-input" 
+				autocomplete="off" 
+				autocapitalize="off" 
+				autocorrect="off" 
+				spellcheck="false" 
+				aria-label="Search"
+				>
+		</div>
+	    <!--  -->
+	    <div id="search-results" class="search-results close">
+	    </div>
+	    <script id="search-result-template" type="text/x-js-template">
+	    <div id="summary-${key}" class="search-result-row">
+	        <h3>
+	        	<a href="${link}">${title}</a>
+	        </h3>
+	        <p>${snippet}</p>
+	        <p>
+	            <small>
+	                ${ isset tags }Tags: ${tags}<br>${ end }
+	            </small>
+	        </p>
+	    </div>
+	    </script>
+		<script id="search-result-template-empty" type="text/x-js-template">
+		<div class="search-result-row">
+	    	No matches found
+		</div>
+	    </script>
+	</div>
+	<!-- ============================-->
 </header>
 <div class="side-header-underbar"></div>
 <!-- ================== -->
@@ -52,18 +93,6 @@
 <!-- Sidebar -->
 <!-- ================== -->
 <aside class="page-nav">
-<div class="search-box">
-	<svg class="search-box-icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-	<input type="search" 
-		name="q" 
-		class="search-input" 
-		autocomplete="off" 
-		autocapitalize="off" 
-		autocorrect="off" 
-		spellcheck="false" 
-		aria-label="Search"
-		>
-</div>
 <div class="page-nav-scroller">
     {{ $currentPage := . }}
     {{ range .Site.Menus.sidebar }}
@@ -138,6 +167,9 @@
 <script src="{{ .Site.BaseURL }}scripts/table.js"></script>
 <script src="{{ .Site.BaseURL }}scripts/sticky.js"></script>
 <script src="{{ .Site.BaseURL }}scripts/menu.js"></script>
+<script src="{{ .Site.BaseURL }}scripts/search.js"></script>
 <script src="{{ .Site.BaseURL }}scripts/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
 </body>
 </html>
