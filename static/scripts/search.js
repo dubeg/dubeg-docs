@@ -1,22 +1,4 @@
-var summaryInclude = 60 * 3; // Chars to include per result.
-var fuse = null;
-var fuseOptions = {
-    tokenize: true,
-    shouldSort: true,
-    includeMatches: true,
-    threshold: 1,
-    location: 0,
-    distance: 100,
-    ignoreLocation: true,
-    ignoreFieldNorm: true,
-    minMatchCharLength: 3,
-    keys: [
-        {name: "title", weight: 0.8},
-        {name: "contents", weight: 0.5}
-        // {name: "tags", weight: 0.3},
-        // {name: "categories", weight: 0.3}
-    ]
-};
+let searchWorker = new Worker('/scripts/search-worker.js');
 let domParser = new DOMParser();
 let tbSearchID = "search-query";
 let tbSearch = document.getElementById(tbSearchID);
@@ -24,6 +6,7 @@ let searchResultsID = 'search-results';
 let searchResults = document.getElementById(searchResultsID);
 let templateEmpty = document.getElementById("search-result-empty");
 let templateSearchResult = document.getElementById("search-result");
+let summaryInclude = 60 * 3; // Chars to include per result.
 
 function init() {
     if (!tbSearch) {
@@ -34,8 +17,15 @@ function init() {
         console.log(`Panel '${searchResultsID}' not found.`);
         return;
     }
+    
+    searchWorker.addEventListener('message', (e) => {
+        resultNodes = formatResults(e.data.results);
+        searchResults.replaceChildren(...resultNodes);
+        toggleResultBox(true);
+    });
+    searchWorker.addEventListener('error', (e) => {console.log(e);});
+
     onKeyDown = debounce(async (event) => {
-            // console.log('Searching')
             if (event.key === "Escape") {
                 tbSearch.value = "";
                 toggleResultBox(open = false);
@@ -46,9 +36,7 @@ function init() {
             
             let query = tbSearch.value;
             if (!query) toggleResultBox(open = false);
-            resultNodes = await search(query);
-            searchResults.replaceChildren(...resultNodes);
-            toggleResultBox(true);
+            searchWorker.postMessage({query: query});
     });
     tbSearch.addEventListener('keydown', onKeyDown);
     // --
@@ -74,22 +62,8 @@ function toggleResultBox(open) {
     else { searchResults.classList.add("close"); }
 }
 
-async function search(query) {
+function formatResults(results) {
     try {
-        if (fuse == null) {
-            // console.log('Fetching search index');
-            // Note: 
-            // Fetch() raises an error to be caught in try/catch
-            // if there's a network error.
-            response = await fetch('/index.json');
-            if (!response.ok) {
-                console.log(`Couldnt fetch the search index (HttpStatusCode: ${response.status})`);
-                return;
-            }
-            pages = await response.json(); 
-            fuse = new Fuse(pages, fuseOptions);
-        }
-        let results = await fuse.search(query);
         let nodes = [];
         for(const x of results) {
             // ---------------
