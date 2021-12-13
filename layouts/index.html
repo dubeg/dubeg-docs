@@ -57,19 +57,19 @@
 	    <!--  -->
 	    <div id="search-results" class="search-results close">
 	    </div>
-	    <script id="search-result-template" type="text/x-js-template">
-	    <div id="summary-{key}" class="search-result-row">
-	        <h3>
-	        	<a href="{link}">{title}</a>
-	        </h3>
-	        <p>{snippet}</p>
-	    </div>
-	    </script>
-		<script id="search-result-template-empty" type="text/x-js-template">
-		<div class="search-result-row">
-	    	No matches found
-		</div>
-	    </script>
+	    <template id="search-result">
+		    <div class="search-result-row">
+		        <h3>
+		        	<a href="{link}">{title}</a>
+		        </h3>
+		        <p>{snippet}&hellip;</p>
+		    </div>
+	    </template>
+		<template id="search-result-empty">
+			<div class="search-result-row">
+		    	No matches found
+			</div>
+	    </template>
 	</div>
 	<!-- ============================-->
 </header>
