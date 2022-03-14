@@ -1,10 +1,15 @@
-# History of Virtualization on Windows
+---
+date: 2020-04-30
+title: GPU Virtualization on Windows
+menu:
+    sidebar:
+        parent: Virtualization
+---
 
 
-
-John Mahowald  
-serverfault.com/questions/954095/poor-mans-virtual-gpu-using-a-multiuser-os-gpu-instead-of-specialist-vgpu-c  
-brianmadden.com/opinion/RemoteFX-vGPU-put-out-to-pasture-as-Microsoft-RDP-grows-up
+## John Mahowald
+- Feb 18, 2019
+- [serverfault.com/questions/954095/](https://serverfault.com/questions/954095/)
 
 Now a brief survey of multi user graphics on Windows Server, from least to most use of graphics hardware.
 
@@ -16,9 +21,10 @@ Supposedly paravirt on Windows will be branded GPU-PV and Windows will understan
 
 Graphics card vendors have their own sharing options, if you get a supported GPU and its drivers. Check hypervisor specific HCLs, XenServer is clear that vGPU is only on certain Nvidia Tesla models. In some cases, there is separate per user license fees for the technology.
 
-NVIDIA GRID vGPU
-AMD MxGPU
-Intel GVT-g
+- NVIDIA GRID vGPU
+- AMD MxGPU
+- Intel GVT-g
+
 And then finally Direct Device Assignment (DDA), dedicating hardware to a VM. Expensive, and vastly complicates security, HA and live migration.
 
 
@@ -29,8 +35,9 @@ In Windows Server 2019, it seems the GPU story is all about Discrete Device Assi
 
 
 ## Using GPU-P in Hyper-V
+- Simon Bison
+- January 6, 2020
+- What's vNext for Windows Server?
+- [techrepublic.com/index.php/article/whats-vnext-for-windows-server/](https://www.techrepublic.com/index.php/article/whats-vnext-for-windows-server/)
+
 GPU-based compute is increasingly important, and Microsoft has been adding support for it in Azure. The partitioning tools give multiple VMs access to a physical GPU, sharing it between the VMs. Each VM has full access to its GPU partition, giving it a significant performance boost without affecting the other VMs. If a VM doesn't need GPU access, the partitions can be adjusted, ensuring that the GPU gets the best possible utilisation.
-
-
-## Moving applications to Windows Containers
-Windows Containers are an important part of the future of Windows Server, acting as a new deployment target for your applications. Microsoft has spent the last couple of years rethinking the role of what was Windows Server Nano, using it as the basis for a stripped-down application host that provides the basis for Windows Container applications. It boots quickly, and provides the minimum services needed for an application. More complicated applications can take advantage of Windows Server Core, which has been substantially slimmed down, making it easier to customise for specific tasks.

@@ -1,9 +1,9 @@
 ---
 date: 2020-04-24
-title: Deployment
+title: MISX & UWP
 menu:
     sidebar:
-        parent: UWP
+        parent: Windows
 ---
 
 MSIX is the packaging technology used by UWP apps.
@@ -18,7 +18,6 @@ Packages can be signed with a certificate, so ensure to install the appropriate 
 	+ Provide download links using the app installer protocol, to msix packages.
 
 - Microsoft Endpoint Configuration Manager
-	+ É
 
 - Microsoft Intune
 

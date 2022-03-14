@@ -25,7 +25,7 @@ In contrast to MAC, an IP address is a logical address. It can be configured man
 ### IP: Private addresses
 There are three (3) ranges of addresses that can be used in a private network (home LAN). These addresses are not routable through the internet.
 
-A. 10.0.0.0    - 10.255.255.255
-B. 172.16.0.0  - 172.31.255.255 
-C. 192.168.0.0 - 192.168.255.255
+- A. 10.0.0.0    - 10.255.255.255
+- B. 172.16.0.0  - 172.31.255.255 
+- C. 192.168.0.0 - 192.168.255.255
 

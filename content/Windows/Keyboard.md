@@ -32,8 +32,8 @@ To remove it:
 
 ```
 HKEY_CURRENT_USER\Keyboard Layout\Preload
-    "1"="00000409"
-    "2"="00000c0c"
+    "1"="00000409" (REG_SZ)
+    "2"="00000c0c" (REG_SZ)
 ```
 
 Common Keys

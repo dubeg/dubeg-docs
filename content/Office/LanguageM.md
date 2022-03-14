@@ -231,6 +231,9 @@ let
     startDate = Date.From(startDatetime),
     endDate = Date.From(endDatetime),
     // --
+    startDateStr = if startDate = null then "2000-01-01" else Date.ToText(startDate, "yyyy-MM-dd"),
+    sndDateStr = if endDate = null then "2099-01-01" else Date.ToText(endDate, "yyyy-MM-dd"),
+    // --
     Source = Sql.Database("hostName\SqlInstanceName,Port", "DatabaseName"),
     ReportTable = Source{[Schema="SchemaName",Item="TableName"]}[Data],
     Filtered = Table.SelectRows(ReportTable, each ([Date] >= startDate and [Date] <= endDate)),
