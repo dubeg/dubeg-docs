@@ -67,3 +67,20 @@ A spanning tree has no loop.
 
 https://www.youtube.com/watch?v=Ilpmn-H8UgE
 https://www.youtube.com/watch?v=BkGEwrzIK4g
+
+
+
+## Misc
+PVST+: 
+- Per-VLAN spanning tree (default for most cisco switches)
+	+ ie. run a spanning-tree instance per vlan.
+	+ enables having a different root bridge on different vlans
+
+RSTP: rapid stp
+- Enhancement over stp.
+- Doesn't work with timers, as stp does,
+	+ Stp takes about 30-50 seconds to converge because of timer usage.
+
+STP
+- Can use port-fast for ports not connected to other switches.
+- All ports connected to other switches need to transition from blocking to listening.

@@ -21,6 +21,7 @@ dotnet script
 ```
 #r "Custom.dll"        // Path,
 #r "System.Xml.Linq"   // Namespace
+#r "System.Text.RegularExpressions"
 // -------------------
 // Don't forget "using" 
 // once dll is loaded.
