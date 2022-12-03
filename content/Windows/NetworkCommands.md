@@ -1,9 +1,28 @@
-- Network connections
-	+ `control netconnections`
-	+ `ncpa.cpl`: Network Control Panel Applet
-	+ Search: 
-		+ EN: Network Connections
-		+ FR: Connections réseaux
+---
+date: 2022-12-03
+title: Network Commands
+menu:
+    sidebar:
+        parent: Windows
+---
+
+<div style="display:flex; align-items:center;">
+	<img src="/images/terminal.svg" style="margin-right:5px;">
+	Run
+</div>
+
++ `control netconnections`
++ `ncpa.cpl`: Network Control Panel Applet
+
+
+<div style="display:flex; align-items:center;">
+	<img src="/images/search-loop.svg" style="margin-right:5px;">
+	Search
+</div>
+
++ English: `Network Connections`
++ French: `Connections réseaux`
+
 
 ```
 ping 

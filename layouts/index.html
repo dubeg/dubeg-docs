@@ -36,6 +36,10 @@
 	    href="{{ .Site.BaseURL }}">
 	    DUBE.G's <span style="font-variant: all-small-caps;">Docs</span>
 	</a>
+	<a class="site-header-link"
+	    href="{{ .Site.BaseURL }}/about">
+	    About
+	</a>
 	<!-- ============================-->
 	<!-- Search -->
 	<!-- ============================-->
@@ -136,7 +140,9 @@
 <article id="post" class="page-post">
 	<header class="post-header">
 		<h1 class="post-title">{{ .Title }}</h1>
-		<span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+		{{ if not .Params.dateless }}
+		<span class="post-date">Updated: {{ .Date.Format "2006-01-02" }}</span>
+		{{ end }}
 	</header>
 	<div class="post-content">
 		{{ .Content }}

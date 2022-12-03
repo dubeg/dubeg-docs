@@ -11,17 +11,29 @@
 	background-color: #1d4b9e;
 	grid-area: header;
 	display:flex;
+	align-items: center;
 }
 
 .site-header-logo {
 	display:flex;
-	justify-content: center;
 	align-items: center;
 }
 
 .site-header-title {
 	font-size:1.2em;
 	margin-left:0.5em;
+}
+
+.site-header-link {
+	font-size:0.8em;
+	margin-left:15px;
+	background-color: #4a6fb1;
+	display:inline-block;
+	padding:3px 8px;
+	border-radius: 5px;
+}
+.site-header-link:hover {
+	background-color: #6b82ad;
 }
 
 .site-header-search {

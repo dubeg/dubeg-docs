@@ -6,6 +6,19 @@ menu:
         parent: Windows
 ---
 
+Note:
+`Dism /Online /Cleanup-Image /RestoreHealth` will repair the component store that SFC uses to repair the system files.
+SFC /SCANNOW will try to fix corrupted or modified system files.
+
+```
+Dism /Online /Cleanup-Image /ScanHealth
+Dism /Online /Cleanup-Image /CheckHealth
+Dism /Online /Cleanup-Image /RestoreHealth
+SFC /SCANNOW
+```
+Should chkdsk also be run?
+
+
 ```
 dism 
 	/Image:C:\Windows
