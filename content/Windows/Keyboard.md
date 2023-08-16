@@ -38,6 +38,18 @@ HKEY_CURRENT_USER\Keyboard Layout\Preload
 
 Common Keys
 
+- `en`: `0x0009`
+- `en-UK`: `0x0809`
 - `en-US`: `0x0409`
 - `en-CA`: `0x1009`
-- `fr-CA`: `0x0c0c`
+- `Canadien French (legacy)`: `0x0c0c`
+- `Canadian Multilingual Standard`: `0x11009`
+
+
+```
+HKEY_USERS\.DEFAULT\Keyboard Layout\Preload
+HKEY_USERS\.DEFAULT\Control Panel\International\Locale
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout\DosKeybCodes
+```
+
+

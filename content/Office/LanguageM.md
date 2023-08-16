@@ -232,7 +232,7 @@ let
     endDate = Date.From(endDatetime),
     // --
     startDateStr = if startDate = null then "2000-01-01" else Date.ToText(startDate, "yyyy-MM-dd"),
-    sndDateStr = if endDate = null then "2099-01-01" else Date.ToText(endDate, "yyyy-MM-dd"),
+    endDateStr = if endDate = null then "2099-01-01" else Date.ToText(endDate, "yyyy-MM-dd"),
     // --
     Source = Sql.Database("hostName\SqlInstanceName,Port", "DatabaseName"),
     ReportTable = Source{[Schema="SchemaName",Item="TableName"]}[Data],
@@ -257,5 +257,18 @@ let
     newDay = List.Min({day, Date.Day(lastDayOfMonth)}, 1),
     Source = #date(year, month, newDay)
 in
+    Source
+```
+
+
+
+## Query Database
+```
+let
+    Source = Sql.Database(
+        "hostName\SqlInstanceName,Port", 
+        "DatabaseName" 
+    )
+in 
     Source
 ```

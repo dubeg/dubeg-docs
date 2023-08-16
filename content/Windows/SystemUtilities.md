@@ -36,6 +36,8 @@ Useable in run and command-line.
 - `systemreset.................System Reset`
 - `rstrui......................System Restore`
 - `recoverydrive...............System Create Recovery Drive`
+- `Schtasks.exe................Scheduled Tasks Command line`
+- `taskschd.msc................Scheduled Tasks GUI`
 
 
 ## Control Panel

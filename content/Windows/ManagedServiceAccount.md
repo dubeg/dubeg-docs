@@ -11,12 +11,7 @@ menu:
 - Automatically manages its password.
 	+ Like computer accounts.
 - Automatically maintains their Kerberos SPN.
-
-Managed through powershell.
-
-
-
-## Creation
+- Managed through powershell.
 
 1. Create the MSA in AD.
 2. Associate the MSA with a computer in AD.
@@ -24,19 +19,21 @@ Managed through powershell.
 4. Configure the service(s) to use the MSA.
 
 
-### Create MSA in A.D.
-
+## Create MSA in A.D.
 Start Powershell as admin on Domain Controller.
 ```
 Import-Module ActiveDirectory
+
 New-ADServiceAccount `
 	-Name <MsaName> `
 	-Enabled $true `
 	-RestrictToSingleComputer
+
 Add-ADComputerServiceAccount -Identity <HostName> -ServiceAccount <MsaName>
 ```
 
 
+## Install MSA on host
 Start Powershell as admin on host using the MSA.  
 RSAT Tools are required.
 ```
@@ -48,7 +45,8 @@ In Windows Services or Task Scheduler, setup your service|task.
 Grant `Log On As a Service` privilege (should be prompted).
 
 
-## Add to group
+## Add MSA to group
+GDUBE: in what scenario?
 ```
 Add-ADGroupMember `
 	-Identity <groupName> `

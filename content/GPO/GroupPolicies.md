@@ -40,6 +40,10 @@ menu:
 ## Administrative Templates
 Microsoft frequently publishes new templates for new versions of Windows. Each template bundle includes policies from all previous versions, so only the latest templates need to be installed on a Domain Controller.
 
+Local Group Policies:
+- C:\Windows\PolicyDefinitions
+- Put your admx files in there.
+
 - Install the templates bundle from microsoft.com.
 	+ Go to: docs.microsoft.com/en-us/troubleshoot/windows-client/group-policy/create-and-manage-central-store
 	+ Download the latest bundle.
