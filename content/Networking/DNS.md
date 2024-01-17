@@ -238,3 +238,21 @@ __Registration__
   of DNS services for the registered domain.
   + most registrars offer DNS hosting as a free service.
 - ICAAN defined a policy on  Transfer of Registrations between Registrars
+
+
+
+## How does Windows decide which DNS Server to use when resolving names?
+Windows 7 and before: NIC binding order in the Advanced Settings in the network connections folder. 
+Windows 8 and later: NIC Interface Metric (a given NIC > IPv4 > Advanced Settings > Interface Metric (automatic or static)).
+
+Steps
+- The DNS Client service sends the name query to the first DNS server on the preferred adapter’s list of DNS servers and waits one second for a response.
+- If the DNS Client service does not receive a response from the first DNS server within one second, it sends the name query to the first DNS servers on all adapters that are still under consideration and waits two seconds for a response.
+- If the DNS Client service does not receive a response from any DNS server within two seconds, the DNS Client service sends the query to all DNS servers on all adapters that are still under consideration and waits another two seconds for a response.
+- If the DNS Client service still does not receive a response from any DNS server, it sends the name query to all DNS servers on all adapters that are still under consideration and waits four seconds for a response.
+- If it the DNS Client service does not receive a response from any DNS server, the DNS client sends the query to all DNS servers on all adapters that are still under consideration and waits eight seconds for a response.
+
+
+```
+Set-NetIPInterface -IfIndex <idx> -InterfaceMetric <number> # Lower is better.
+```
