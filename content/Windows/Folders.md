@@ -24,6 +24,7 @@ menu:
 
 
 # CLSID
+- `{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}`: 3D Objects
 - `{0E5AAE11-A475-4c5b-AB00-C66DE400274E}`: Shell File System Folder
 - `{031E4825-7B94-4dc3-B131-E946B44C8DD5}`: UsersLibraries
 - `{679f85cb-0220-4080-b29b-5540cc05aab6}`: Quick Access
@@ -322,3 +323,16 @@ Windows Registry Editor Version 5.00
 - https://msdn.microsoft.com/en-us/library/windows/desktop/cc144090(v=vs.85).aspx 
    + Introduction to Shell Namespace
 - https://github.com/libyal/libfwsi/wiki/Folder-Type-Identifiers
+
+
+## Remove 3D Objects
+```
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace
+   + Remove: {0DB7E03F-FC29-4DC6-9020-FF41B59E513A}
+```
+
+And:
+```
+HKEY_CLASSES_ROOT\CLSID\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}
+   + System.IsPinnedToNameSpaceTree: 0
+```
