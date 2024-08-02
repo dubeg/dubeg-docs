@@ -39,7 +39,7 @@ var trailUtil = {
 		var results = [];
 
 		var iFirst = 0;
-		var iLast = 0;
+		var iEnd = 0;
 		
 		var crumbLabel = "";
 		var crumbURL = "";
