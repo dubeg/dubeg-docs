@@ -17,7 +17,7 @@ Our integrated SD card reader:
 
 PCI is unsupported:
 
-![](/Blog/Images/VMWare.USB3/VMware.PCI.Unsupported.png)
+![](/Blog/Images/VMWare.USB3/VMware.PCI.Unsupported.png "border")
 
 - https://www.reddit.com/r/vmware/comments/1086tqv/pcie_passthrough/
 - https://knowledge.broadcom.com/external/article/302487/internal-sd-card-reader-is-not-detected.html
@@ -52,7 +52,7 @@ Once you have the driver installer, do the following:
 - Make sure your virtual machine has the USB Controller set to 3.0:
 	+ VMWare > VM > Settings > USB Controller: 3.0
 		- You may have to reboot the virtual machine after the change.
-		- ![](/Blog/Images/VMWare.USB3/VMWare.USB.Controllers.png)
+		- ![](/Blog/Images/VMWare.USB3/VMWare.USB.Controllers.png "border")
 	+ Note: if it's set to 1.1 or 2.0, you'll get an error when running the installer: `The computer does not meet the minimum requirements for installing the software`.
 		+ ![](/Blog/Images/VMWare.USB3/Intel.MinimumRequirements.png)
 		+ It means the USB 3.0 Host controller wasn't found in the VM, which the Intel installer requires.
