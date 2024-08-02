@@ -13,11 +13,11 @@ We had to publish some project on a SD card to transfer to the panel PC in need 
 
 Our integrated SD card reader:
 
-![](../Images/VMWare.USB3/Laptop.PCI.SD.Card.Reader.png)
+![](/Blog/Images/VMWare.USB3/Laptop.PCI.SD.Card.Reader.png)
 
 PCI is unsupported:
 
-![](../Images/VMWare.USB3/VMware.PCI.Unsupported.png)
+![](/Blog/Images/VMWare.USB3/VMware.PCI.Unsupported.png)
 
 - https://www.reddit.com/r/vmware/comments/1086tqv/pcie_passthrough/
 - https://knowledge.broadcom.com/external/article/302487/internal-sd-card-reader-is-not-detected.html
@@ -52,9 +52,9 @@ Once you have the driver installer, do the following:
 - Make sure your virtual machine has the USB Controller set to 3.0:
 	+ VMWare > VM > Settings > USB Controller: 3.0
 		- You may have to reboot the virtual machine after the change.
-		- ![](../Images/VMWare.USB3/VMWare.USB.Controllers.png)
+		- ![](/Blog/Images/VMWare.USB3/VMWare.USB.Controllers.png)
 	+ Note: if it's set to 1.1 or 2.0, you'll get an error when running the installer: `The computer does not meet the minimum requirements for installing the software`.
-		+ ![](../Images/VMWare.USB3/Intel.MinimumRequirements.png)
+		+ ![](/Blog/Images/VMWare.USB3/Intel.MinimumRequirements.png)
 		+ It means the USB 3.0 Host controller wasn't found in the VM, which the Intel installer requires.
 		+ Quoting `michaln` on virtualbox.org: 
 			+ "Although it's perfectly possible to install drivers for hardware that is not (yet) plugged in, the Intel installer requires it, so that's how it is."
@@ -78,7 +78,7 @@ That means any of the following options:
 	+ The hub can even be a UGREEN x-in-one attached via USB-C (USB 3.0) to your laptop, as long as the port itself is USB 2.0.
 		+ Eg. UGREEN Revodok USB-C Hub, 5-in-1
 		+ https://www.amazon.ca/dp/B0BR3M8XHK/
-		+ ![](../Images/VMWare.USB3/UGREEN.5in1.USB2.jpg)
+		+ ![](/Blog/Images/VMWare.USB3/UGREEN.5in1.USB2.jpg)
 	+ Note: blue ports are always USB 3.x
 3. `USB 2.0 device -> USB 3.0 Port on Host (laptop) -> VM (USB Controller: 2.0)`
 
