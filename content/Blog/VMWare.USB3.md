@@ -5,9 +5,11 @@ date: 2024-08-02
 
 Working in the industrial automation industry, technicians are constantly having to boot up old Windows OSes in virtual machines to service old machines here and there: maintenance, bugfix, whatever. Well it happened to me again today, and this time it was a Windows 7 virtual machine setup to run an old version of Siemens TIA Portal. 
 
+We had to publish some project on a SD card to transfer to the panel PC in need of servicing, and our laptop model (Lenovo T series 2024) has an SD Card reader built-in, so that seemed easy enough.
+
 ## PCI passthrough is unsupported
 
-We had to publish some project on a SD card to transfer to the panel PC in need of servicing, and our laptop model (Lenovo T series 2024) has an SD Card reader built-in, so that seemed easy enough. However we found out that our integrated SD Card reader communicates via PCI, & VMWare Workstation doesn't support attaching devices via PCI. ESXi does, but not Workstation.
+Unfortunately, we found out that our integrated SD Card reader communicates via PCI, & VMWare Workstation doesn't support attaching devices via PCI. ESXi does, but not Workstation.
 
 ### References
 
