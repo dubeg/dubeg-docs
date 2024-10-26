@@ -22,24 +22,22 @@
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/site-media.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/search-box.css?{{ now.Unix }}" />
 <link rel="stylesheet" href="{{ .Site.BaseURL }}styles/syntax-highlighting.css?{{ now.Unix }}" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Noto+Sans+JP:wght@400&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- ================== -->
 <!-- Header -->
 <!-- ================== -->
 <header id="site-header" class="site-header ">
-	<div class="site-header-logo">
-	    <img src="/images/logo-bug.png" style="width:30px;" />
-	</div>
-	<a  class="site-header-title"
-	    href="{{ .Site.BaseURL }}">
+	<a class="site-header-title" href="{{ .Site.BaseURL }}">
 	    DUBE.G's <span style="font-variant: all-small-caps;">Docs</span>
 	</a>
-	<a class="site-header-link"
-	    href="{{ .Site.BaseURL }}/about">
-	    About
-	</a>
+	<div class="site-header-links">
+		<a class="site-header-link"
+		    href="{{ .Site.BaseURL }}/about">
+		    About
+		</a>
+	</div>
 	<!-- ============================-->
 	<!-- Search -->
 	<!-- ============================-->

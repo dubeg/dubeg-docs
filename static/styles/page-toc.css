@@ -6,7 +6,7 @@
 	top: 10px;
 	margin-left: 1em;
 	padding-right: 5px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', system-ui, sans-serif;
 	font-size: 0.9em;
 	height: 1px;
 }
@@ -31,7 +31,7 @@
 }
 
 .toc-list { margin-left:0em; }
-.toc-h1 { font-size:1.2em; font-weight: 500; font-family: 'Noto Sans JP', sans-serif;}
+.toc-h1 { font-size:1.2em; }
 .toc-h2 { font-size:0.95em; margin-left: 0em; }
 .toc-h3 { font-size:0.8em; margin-left: 0.5em; }
 .toc-h4 { font-size:0.9em; margin-left: 1em; }

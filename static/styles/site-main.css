@@ -1,9 +1,7 @@
 body {
-	font-family:
-				'Open Sans', 
-				sans-serif;
+	font-family: 'Open Sans', system-ui, sans-serif;
 	display: grid;
-	grid-template-columns: 130px auto;
+	grid-template-columns: 0px auto;
 	grid-template-areas: 
 		"sidebar header"
 		"sidebar bar"

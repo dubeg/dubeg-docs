@@ -12,10 +12,12 @@
 		- 43.2px  /* Trail */
 		- 5px /* ColorBar */
 	);
+	overflow-wrap: break-word;
 }
 
 .post-title
 {
+	font-family: Montserrat, system-ui, sans-serif;
 	font-size:2.5em;
 	font-weight: 400;
 	color: rgb(70,70,70);
@@ -36,7 +38,7 @@
 	border: 2px solid transparent;
 
 	font-weight:bold;
-	font-family: Consolas;
+	font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace;
 }
 .post-date-day
 {
@@ -184,7 +186,7 @@
 }
 .post-content code
 {
-	font-family: "Consolas";
+	font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace;
 	display: inline-block;
 	font-size: 0.8em;
     line-height: 1.4rem;
@@ -226,7 +228,7 @@
 }
 .post-content table td
 {
-	font-family: Consolas;
+	font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace;
 }
 .post-content table th
 {

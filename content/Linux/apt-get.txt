@@ -1,5 +1,0 @@
-sudo apt-get update                 Get infos about packages.
-sudo apt-get install                New package
-sudo apt-get --show-upgraded upgrade (or -u) Show updates available.
-sudo apt-get upgrade                Update packages.
-sudo apt-get dist-upgrade           Update packages and...

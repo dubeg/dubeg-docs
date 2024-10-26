@@ -13,7 +13,7 @@
 	height:calc(100vh);
 	grid-area: sidebar;
 	background-color: #f7f7f8;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', system-ui, sans-serif;
 	font-size: 12px;
 	/*padding-top:0.5em;*/
 	display: flex;
