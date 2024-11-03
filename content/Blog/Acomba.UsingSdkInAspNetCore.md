@@ -13,7 +13,7 @@ It also has a 32-bit STA COM interface, ie. `AcoSDK.dll`, which we can readily u
 
 In my case, I wanted to use the COM interface from within an ASP.NET Core app, but since the COM interface is 32-bit & STA, it's a bit complicated. 
 
-You usually want to avoid using STA COM objects in ASP.NET Core because there are potential concurrency issues hidden in there. But if you do & it seem to work OK early on during testing, it might just be that you're not yet using those COM objects concurrently.
+You usually want to avoid using STA COM objects in ASP.NET Core because there are potential concurrency issues hidden in there (hint: finalizers). But if you do & it seem to work OK early on (during testing), it might just be that you're not using those COM objects concurrently (yet).
 
 On the 32-bit issue, there are two options:
 
@@ -36,10 +36,18 @@ There's a (perhaps big) downside to it that I must note: since the COM library i
 
 To configure the Acomba COM interface to use the built-in COM Surrogate, two options are available:
 
-- Configure a COM+ application.
+- Configure a COM+ application (untested).
+- Use OLE/COM Object Viewer 
+  + oleview.exe
+  + Read this: [Configuring a Surrogate with the OLE/COM Object Viewer](https://flylib.com/books/en/3.357.1.52/1/).
 - Edit the registry.
+- __(New)__ J-Integra's [SetDllHost.exe](http://j-integra.intrinsyc.com/support/com/doc/tools/SetDllHost.html)
+  + CLI tool that does the registry edits automatically for a give COM library.
 
-Since I didn't know how to create COM+ apps, I went with editing the registry since that was documented by a few Stack Overflow answers.
+Since I didn't know much about COM then, I went with editing the registry since that was documented by a few answers on Stack Overflow. 
+
+Note: today, however, I would just use `SetDllHost.exe`, which is available on J-Integra's [website](http://j-integra.intrinsyc.com/) (http only, no https). Download the trial for __J-Integra COM__. You'll need to register for it but it's quite minimal & it doesn't require email activation.
+
 
 ### Editing the registry
 To configure the COM server to use a DLL Surrogate:
@@ -66,15 +74,14 @@ To configure the COM server to use a DLL Surrogate:
 
 
 ## STA & ASP.NET Core
-Using a STA COM library in ASP.NET Core is error-prone.
-There's a great chance to leak references to COM objects because of finalizers, & when you're using COM Surrogate(s), that means leaving `dllhost.exe` instances running even after the C# app exited.
+Using a STA COM library in ASP.NET Core is risky: a COM object might deadlock the (.NET) finalizer thread, which would result in leaking memory as well as leaving `dllhost.exe` instances running well after the C# app exited if the COM library is using a (default) DLL Surrogate.
 
-The safest way I've found is using the class `ThreadAffinityTaskScheduler.cs`:
+A solution to this is to use `ThreadAffinityTaskScheduler.cs`:
 
 - Made by [noseratio](https://stackoverflow.com/users/1768303/noseratio)
 - Available here: https://github.com/noseratio/tpl
 
-Here's an example of its usage. 
+Here's an example:
 
 ```
 public class AcombaService {
@@ -105,16 +112,77 @@ public class AcombaService {
   ...
 }
 ```
-The use of a semaphore/lock might be optional. I just didn't trust that the COM library wasn't using static variables.
+The use of a semaphore/lock might be optional, I just don't know enough about COM & the AcoSDK library to trust multiple threads making calls to the COM surrogate concurrently.
 
 
 ## References
-- https://www.acomba.com/en/solutions/acomba/
-- https://aideacomba.forum-canada.com/
 - https://devblogs.microsoft.com/oldnewthing/20090212-00/?p=19173
 - https://blog.mattmags.com/2007/06/30/accessing-32-bit-dlls-from-64-bit-code/
-- https://learn.microsoft.com/en-us/archive/msdn-magazine/2005/april/simplify-app-deployment-with-clickonce-and-registration-free-com
-- https://learn.microsoft.com/en-us/samples/dotnet/samples/out-of-process-com-server/
+- https://jacobfilipp.com/MSJ/activex0597.html
+- https://flylib.com/books/en/3.357.1/
+  + Developers Workshop to COM and ATL 3.0
+  + ISBN: 1556227043
+  + EAN: 2147483647
+  + Year: 2000
+  + Author: Andrew W. Troelsen
+
+
+Additional references:
+
+- https://www.acomba.com/en/solutions/acomba/
+- https://aideacomba.forum-canada.com/
 - https://learn.microsoft.com/en-us/windows/win32/com/dll-surrogates
 - https://learn.microsoft.com/en-us/windows/win32/com/dllsurrogate
 - https://learn.microsoft.com/en-us/answers/questions/189002/registration-free-com-for-dllsurrogate-process
+- https://learn.microsoft.com/en-us/archive/msdn-magazine/2005/april/simplify-app-deployment-with-clickonce-and-registration-free-com
+- https://www.cs.odu.edu/~wild/windowsNT/Spring99/notes.htm
+- https://helparchive.huntertur.net/category/39
+- https://thrysoee.dk/InsideCOM+/
+  + [DLL Surrogates](https://thrysoee.dk/InsideCOM+/ch12b.htm)
+
+
+## About COM & the Finalizer thread issue 
+
+Hans Passant:
+
+>  It is the universal way to deadlock the finalizer thread. The program is using a COM object that is not thread-safe. It is made thread-safe by the COM infrastructure by forcing all threaded calls to do the equivalent of Invoke(), running the call on the thread that created the object. The finalizer has to do this as well to make the final Release() call that destroys it. But the thread that owns the object is no longer responsive so the call cannot complete.
+
+SteveSims:
+
+> COM can flip a ThreadPool worker thread over to the STA model, but threadpool threads were not designed to support this thread model. 
+
+> The application worked most of the time because in all cases the COM objects were forcefully disposed on a API thread that created them and the finalizer was not involved in the cleanup.
+
+__Reference:__
+
+- https://stackoverflow.com/questions/51743909/finalizer-blocked-issue
+  + https://www.tessferrandez.com/blog/2006/03/26/net-memory-leak-unblock-my-finalizer.html
+
+
+
+## About AcoSDK.dll
+AcoSDK.dll 
+
+- COM library
+- Embeds a .tlb file
+- In-proc
+- 32-bit
+- STA
+
+C# app (csproj):
+
+- COMReference
+  + Name: (optional) display name of the component
+  + Guid: (required)
+  + EmbedInteropTypes: (optional) embed the interop types directly into your assembly, rather than generating an interop assembly (separate DLL).
+  + Isolated: (optional) specifies whether the component is reg-free.
+  + WrapperTool: (optional) name of the wrapper tool that is used on the component.
+    - Primary
+    - tlbimp
+    - ...
+
+
+About interop assemblies:
+
+- https://limbioliong.wordpress.com/2011/08/31/interop-assemblies-some-general-advise-on-usage/
+- https://learn.microsoft.com/en-us/dotnet/framework/interop/how-to-generate-primary-interop-assemblies-using-tlbimp-exe
